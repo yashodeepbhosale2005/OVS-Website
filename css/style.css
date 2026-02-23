@@ -1226,3 +1226,64 @@ body {
     font-size: 16px;
   }
 }
+
+/* =========================
+   MOBILE FIXES – OPTIMIZED
+========================= */
+
+/* Prevent horizontal scroll */
+body, html {
+  overflow-x: hidden;
+}
+
+/* Make images, iframes, videos responsive */
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hero & sections */
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 15px;
+  }
+  .section {
+    padding: 60px 15px;
+  }
+  .hero h1 { font-size: 28px; }
+  .hero h3 { font-size: 20px; }
+  .hero p { font-size: 14px; }
+}
+
+/* Clients & services grid */
+@media (max-width: 400px) {
+  .clients-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    padding-top: 80px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 9999;
+  }
+
+  .nav.active {
+    transform: translateX(0);
+  }
+}
