@@ -980,15 +980,14 @@ body {
   .contact-grid {
     grid-template-columns: 1fr;
   }
-}
-/* =========================
+}/* =========================
    FOOTER
 ========================= */
-
 .footer {
   background: #0b0b0d;
   padding: 80px 20px 30px;
   color: #9ca3af;
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer-container {
@@ -1019,6 +1018,16 @@ body {
   line-height: 1.7;
 }
 
+.footer a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
 .footer ul {
   list-style: none;
   padding: 0;
@@ -1029,108 +1038,50 @@ body {
   font-size: 14px;
 }
 
-.footer ul li a {
-  color: #9ca3af;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.footer ul li a:hover {
-  color: #ffffff;
-  padding-left: 5px;
+.footer-bottom {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #26262b;
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
 }
 
 /* Social Icons */
-.footer-social {
-  margin-top: 15px;
-  display: flex;
-  gap: 12px;
-}
-
-.footer-social a {
-  width: 35px;
-  height: 35px;
-  border-radius: 8px;
-  background: #1a1a1f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 14px;
-  transition: 0.3s ease;
-}
-
-.footer-social a:hover {
-  background: var(--brand-accent);
-}
-/* =========================
-   FOOTER SOCIAL ICONS
-========================= */
 .social-links {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 16px;
-  margin-top: 20px;
+  gap: 12px;
+  margin-top: 15px;
 }
 
 .social-links a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 45px;
-  height: 45px;
-  background: var(--bg-card);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  color: var(--text-main);
-  font-size: 20px;
+  background: #1a1a1f;
+  color: #ffffff;
+  font-size: 16px;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   position: relative;
   overflow: hidden;
 }
 
-.social-links a i {
-  z-index: 2;
-}
-
-
-.floating-whatsapp {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 60px;
-  height: 60px;
-  background: #25D366;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  z-index: 999;
-  transition: 0.3s ease;
-}
-
-.floating-whatsapp:hover {
-  transform: scale(1.1);
-}
-/* Hover Effects */
 .social-links a:hover {
   transform: translateY(-5px) scale(1.1);
   color: #fff;
   box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }
 
-/* Individual Brand Colors */
+/* Brand Colors on Hover */
 .social-links a.facebook:hover { background: #3b5998; }
 .social-links a.instagram:hover { background: #E1306C; }
-.social-links a.whatsapp:hover { background: #25D366; }
 .social-links a.linkedin:hover { background: #0077B5; }
 .social-links a.youtube:hover { background: #FF0000; }
 
-/* Floating Ripple Effect on Hover */
+/* Ripple Effect */
 .social-links a::before {
   content: "";
   position: absolute;
@@ -1148,22 +1099,7 @@ body {
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* Responsive Footer Socials */
-@media (max-width: 768px) {
-  .social-links {
-    justify-content: center;
-  }
-}
-
-/* Bottom Strip */
-.footer-bottom {
-  margin-top: 60px;
-  padding-top: 20px;
-  border-top: 1px solid #26262b;
-  text-align: center;
-  font-size: 13px;
-  color: #6b7280;
-}
+/* Responsive Footer */
 @media (max-width: 992px) {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1175,55 +1111,10 @@ body {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 30px;
+    text-align: center;
   }
-}
-
-/* SCROLL REVEAL */
-.service-card,
-.stats-card,
-.client-card,
-.section-title {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease;
-}
-
-.service-card.show,
-.stats-card.show,
-.client-card.show,
-.section-title.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-  .nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    transform: translateY(-20px);
-    opacity: 0;
-    transition: 0.3s ease;
-  }
-
-  .nav.active {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 120px 20px;
-  }
-
-  .hero h1 {
-    font-size: 34px;
-  }
-
-  .hero p {
-    font-size: 16px;
+  .social-links {
+    justify-content: center;
   }
 }
 
