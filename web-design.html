@@ -1,23 +1,248 @@
-<!-- ================= HEADER ================= -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UrbanMark Media | Web Development Portfolio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* =========================
+   THEME VARIABLES
+========================= */
+:root {
+  --brand-magenta: #8B1246;
+  --brand-orange: #FF6A00;
+  --brand-accent: #6D28D9;
+
+  --bg-main: #f8fafc;
+  --bg-header: #ffffff;
+  --bg-card: #ffffff;
+  --bg-light: #f1f5f9;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --border-soft: #e5e7eb;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
+body { background: var(--bg-main); color: var(--text-main); line-height: 1.6; }
+a { text-decoration: none; }
+
+/* =========================
+   HEADER AND NAV
+========================= */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: var(--bg-header, #fff);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 22px;
+  color: #000; /* black brand font */
+}
+
+.logo-img {
+  width: 90px;
+  height: 60px;
+}
+
+.logo-main {
+  font-size: 26px;
+  font-weight: 800;
+  color: #000; /* black brand text */
+}
+
+.nav {
+  display: flex;
+  gap: 26px;
+}
+
+.nav a {
+  position: relative;
+  color: #000; /* black nav text */
+  font-weight: 600;
+  font-size: 16px;
+  padding: 5px 0;
+  transition: all 0.25s ease-in-out;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--brand-magenta);
+  font-weight: 700;
+  transform: scale(1.05); /* subtle zoom on hover or active */
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: var(--brand-magenta);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+/* MOBILE RESPONSIVE HEADER */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #000;
+}
+
+.menu-toggle i {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    padding: 15px 0;
+  }
+  .nav.active {
+    display: flex;
+  }
+}
+
+/* =========================
+   CLIENT PORTFOLIO GRID
+========================= */
+main { padding:80px 5%; }
+h2 { text-align:center; color:var(--brand-magenta); font-size:36px; margin-bottom:50px; }
+.project-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px; }
+.project-card { background:var(--bg-card); border-radius:10px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:center; transition:0.3s; }
+.project-card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+.project-card h3 { color:var(--brand-magenta); margin-bottom:10px; font-size:20px; }
+.project-card p { font-size:14px; color:var(--text-muted); margin-bottom:10px; }
+.project-card a { color:#1a73e8; font-weight:500; }
+.project-card a:hover { text-decoration:underline; }
+
+/* =========================
+   FOOTER
+========================= */
+.footer { background:#0b0b0d; padding:80px 20px 30px; color:#9ca3af; font-family:'Poppins',sans-serif; }
+.footer-container { max-width:1200px; margin:auto; }
+.footer-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:50px; }
+.footer h3, .footer h4 { color:#ffffff; }
+.footer h3 { font-size:22px; margin-bottom:15px; }
+.footer h4 { font-size:16px; margin-bottom:18px; }
+.footer p, .footer ul li { font-size:14px; line-height:1.7; }
+.footer a { color:#9ca3af; transition:0.3s ease; }
+.footer a:hover { color:#ffffff; }
+.footer ul { list-style:none; padding:0; }
+.footer-bottom { margin-top:60px; padding-top:20px; border-top:1px solid #26262b; text-align:center; font-size:13px; color:#6b7280; }
+
+/* Social Icons */
+.social-links { display:flex; gap:12px; margin-top:15px; }
+.social-links a {
+  display:flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%;
+  background:#1a1a1f; color:#fff; font-size:16px; transition:all 0.3s ease; position:relative; overflow:hidden;
+}
+.social-links a:hover { transform:translateY(-5px) scale(1.1); box-shadow:0 8px 25px rgba(0,0,0,0.25); }
+.social-links a.facebook:hover { background:#3b5998; }
+.social-links a.instagram:hover { background:#E1306C; }
+.social-links a.linkedin:hover { background:#0077B5; }
+.social-links a.youtube:hover { background:#FF0000; }
+
+/* Mobile */
+@media (max-width:768px) {
+  .menu-toggle { display:block; }
+  .nav { display:none; flex-direction:column; width:100%; background:#fff; padding:20px 0; }
+  .nav.active { display:flex; }
+}
+@media (max-width:992px) { .footer-grid { grid-template-columns:repeat(2,1fr); gap:40px; } }
+@media (max-width:600px) { .footer-grid { grid-template-columns:1fr; gap:30px; text-align:center; } .social-links{justify-content:center;} }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
 <header class="header">
   <div class="brand">
     <img src="images/logo.png" class="logo-img" alt="UrbanMark Logo">
-    <div class="logo-main">
-      <span class="grad-magenta">UrbanMark</span> Media
-    </div>
+    <div class="logo-main"><span class="grad-magenta">NEXORA </span> MEDIA</div>
   </div>
 
-  <div class="menu-toggle" id="menu-toggle">
-    <i class="fas fa-bars"></i>
-  </div>
+  <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
 
   <nav class="nav" id="nav">
-    <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="#clients">Clients</a>
-    <a href="#work">Work</a>
-    <a href="#customize">Customize</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="#" class="active">Web Development</a> <!-- current page -->
+    <a href="index.html#about">About Us</a>
+    <a href="index.html#contact">Contact</a>
   </nav>
 </header>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+  <h2>Our Web Development Clients</h2>
+  <div class="project-grid">
+    <div class="project-card"><h3>AnadaTech</h3><p>Fintech infrastructure & payment solutions platform built for scale and speed.</p><a href="https://anadatech.com/" target="_blank">Visit Website</a></div>
+    <div class="project-card"><h3>DakshGuru</h3><p>Recruitment and HR consulting connecting companies with top talent efficiently.</p><a href="https://dakshguru.com/" target="_blank">Visit Website</a></div>
+    <div class="project-card"><h3>Gravitas India</h3><p>Business services and solutions company offering insights and consulting support.</p><a href="https://gravitasindia.co.in/" target="_blank">Visit Website</a></div>
+    <div class="project-card"><h3>KodeIQ Digital Marketing</h3><p>Digital marketing training institute and course provider in Pune.</p><a href="https://kodeiq.com/digital-marketing-course-pune.html" target="_blank">Visit Website</a></div>
+    <div class="project-card"><h3>Dormer Loft Conversion</h3><p>Showcase project highlighting home renovation and loft conversion designs.</p><a href="https://static.wixstatic.com/media/2e9333_4dc7df24438046c5bfa0058ff84db31b~mv2.png" target="_blank">View</a></div>
+    <div class="project-card"><h3>DOT Consulting</h3><p>Corporate trends, business insights, and professional consulting services.</p><a href="https://www.dot-consulting.org/articles/business-and-corporate-trends-to-watch-now.html" target="_blank">Visit Website</a></div>
+    <div class="project-card"><h3>Cookie Cartel</h3><p>Fashion ecommerce site showcasing collection bundles for customers.</p><a href="https://cookiecartel.in/pages/collection-bundle/?b=c573d7c5-3479-4e78-96a4-f3d4df79c544" target="_blank">Visit Website</a></div>
+    <div class="project-card"><h3>Kumbhar Tours</h3><p>Travel & tours service provider website for booking and itinerary showcases.</p><a href="https://kumbhartours.com/" target="_blank">Visit Website</a></div>
+    <div class="project-card"><h3>Mane Travels</h3><p>Travel agency home page with booking and service information.</p><a href="https://manetravels.com/" target="_blank">Visit Website</a></div>
+    <div class="project-card"><h3>Sangli Car Rental</h3><p>Local car rental services website providing fleet and contact details.</p><a href="https://sanglicarrental.in/" target="_blank">Visit Website</a></div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-about"><h3>UrbanMark Advertising</h3><p>Delivering professional branding, printing, and advertising solutions with precision, innovation, and creativity.</p></div>
+      <div class="footer-links"><h4>Services</h4><ul><li>Printing Solutions</li><li>LED Screen Advertising</li><li>Political Branding</li><li>Corporate Campaigns</li></ul></div>
+      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="#services">Services</a></li><li><a href="#work">Our Work</a></li><li><a href="#about">About Us</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4><p>Phone: <a href="tel:+918007392979">+91 8007392979</a></p><p>Email: <a href="mailto:ovsmedia25@gmail.com">ovsmedia25@gmail.com</a></p><div class="social-links"><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a><a href="#" class="instagram"><i class="fab fa-instagram"></i></a><a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a><a href="#" class="youtube"><i class="fab fa-youtube"></i></a></div></div>
+    </div>
+    <div class="footer-bottom">© 2026 UrbanMark Advertising. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('nav');
+menuToggle.addEventListener('click', () => { nav.classList.toggle('active'); });
+</script>
+
+</body>
+</html>
