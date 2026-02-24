@@ -92,17 +92,18 @@ body {
   display: flex;
   flex-direction: column;
   line-height: 1.1;
+  gap: 4px;   /* little more space */
 }
 
 .logo-main {
   font-size: 22px;
   font-weight: 800;
 }
-
 .logo-sub {
   font-size: 11px;
   color: #777;
-  letter-spacing: 0.5px;
+  margin-top: 2px;   /* small spacing */
+  letter-spacing: 0.4px;
 }
 
 /* NAVIGATION */
@@ -149,11 +150,9 @@ body {
    MOBILE NAVIGATION
 ========================= */
 @media (max-width: 768px) {
-
-  .header {
-    padding: 12px 20px;
-  }
-
+.header {
+  padding: 20px 40px;
+}
   .menu-toggle {
     display: block;
     margin-left: auto;
@@ -173,6 +172,7 @@ body {
     box-shadow: -5px 0 20px rgba(0,0,0,0.1);
     transition: 0.3s ease;
   }
+  
 
   .nav.active {
     right: 0;
@@ -433,66 +433,23 @@ body {
     font-size: 12px;
   }
 }
-
-/* =========================
-   SERVICES SECTION MOBILE
-========================= */
-@media (max-width: 768px) {
-  .services-grid {
-    display: grid; /* Change from flex/grid combo if needed */
-    grid-template-columns: 1fr; /* Single column for mobile */
-    gap: 20px;
-  }
-
-  .service-card, .tech-card {
-    padding: 25px 15px;
-  }
-
-  .service-card h3 {
-    font-size: 20px;
-  }
-
-  .service-card p {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 480px) {
-  .services-grid {
-    gap: 15px;
-  }
-
-  .service-card, .tech-card {
-    padding: 20px 10px;
-  }
-
-  .service-card h3 {
-    font-size: 18px;
-  }
-
-  .service-card p {
-    font-size: 12px;
-  }
-}
 /* =========================
    SERVICES SECTION
 ========================= */
 .services-section {
-  background: var(--bg-light, #f8f8f8);
-  padding: 80px 5%;
+  background: #f8f8f8;
+  padding: 90px 5%;
 }
 
-/* Section Title */
 .section-title {
   text-align: center;
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 60px;
-  color: var(--text-main, #1f1f1f);
 }
 
 /* =========================
-   SERVICES GRID (6 CARDS)
+   GRID
 ========================= */
 .services-grid {
   display: grid;
@@ -501,74 +458,35 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 /* =========================
-   TECHNICAL EXPERTISE SECTION
+   SERVICE CARD
 ========================= */
-
-/* Add spacing after Services grid */
-.technical-title {
-  margin-top: 100px; /* space above technical expertise */
-  margin-bottom: 20px;
-}
-
-/* Tagline under Technical Expertise */
-.tech-tagline {
-  text-align: center;
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 40px;
-}
-
-/* Tech Card Tagline */
-.tech-card p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  margin-top: 8px;
-}
-/* Tagline inside tech card */
-.tech-card .tech-tagline {
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  margin-top: 8px;
-}
-
-/* Keep hover and icon effects intact */
-.tech-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 45px rgba(124, 58, 237, 0.2);
-}
-
-.tech-card:hover .service-icon {
-  background: #ec4899;
-  transform: rotate(12deg) scale(1.1);
-}
-/* SERVICE CARD */
 .service-card {
   position: relative;
-  background: var(--bg-card, #fff);
-  padding: 32px 24px;
-  border-radius: 18px;
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 20px;
   text-align: center;
-  border: 1px solid transparent;
-  transition: all 0.4s ease;
+  transition: 0.4s ease;
   overflow: hidden;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
-/* Tagline under Technical Expertise */
-.tech-tagline {
-  text-align: center;
-  font-size: 16px;
-  color: #555;        /* slightly muted color */
-  margin-bottom: 40px; /* spacing before cards */
+
+/* Hover lift */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(124, 58, 237, 0.1);
 }
-/* Animated Gradient Border */
+
+/* Gradient animated border */
 .service-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 18px;
+  border-radius: 20px;
   padding: 1.5px;
   background: linear-gradient(120deg, #7c3aed, #ec4899, #7c3aed);
   background-size: 200% 200%;
@@ -584,22 +502,17 @@ body {
   transition: 0.4s ease;
 }
 
-/* Show border on hover */
 .service-card:hover::before {
   opacity: 1;
 }
 
-/* Slight lift */
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.08);
-}
-
-/* ICON */
+/* =========================
+   ICON
+========================= */
 .service-icon {
   width: 60px;
   height: 60px;
-  margin: 0 auto 18px;
+  margin: 0 auto 20px;
   border-radius: 15px;
   background: #f3e8ff;
   display: flex;
@@ -616,71 +529,22 @@ body {
   transform: rotate(10deg) scale(1.1);
 }
 
-/* Card title */
+/* =========================
+   TEXT
+========================= */
 .service-card h3 {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 12px;
-  color: var(--text-main, #1f1f1f);
 }
 
-/* Card description */
 .service-card p {
   font-size: 14px;
   line-height: 1.6;
-  color: var(--text-muted, #555);
+  color: #555;
 }
 
 /* =========================
-   TECH CARD (Clickable)
-========================= */
-.tech-card {
-  display: block; /* make entire card clickable */
-  background: var(--bg-card, #1f1f2e);
-  color: #fff;
-  border-radius: 18px;
-  padding: 36px 28px;
-  text-align: center;
-  border: 1px solid rgba(124, 58, 237, 0.15);
-  transition: all 0.4s ease;
-  cursor: pointer;
-}
-
-.tech-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 45px rgba(124, 58, 237, 0.2);
-}
-
-.tech-card .service-icon {
-  width: 70px;
-  height: 70px;
-  font-size: 26px;
-  margin-bottom: 15px;
-  background: #7c3aed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  transition: 0.3s ease;
-}
-
-.tech-card:hover .service-icon {
-  background: #ec4899;
-  transform: rotate(12deg) scale(1.1);
-}
-
-.tech-card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.tech-card p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* =========================
-   KEYFRAMES
+   ANIMATION
 ========================= */
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
@@ -693,18 +557,20 @@ body {
 @media (max-width: 992px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
   }
 }
 
 @media (max-width: 600px) {
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 
-  .service-card, .tech-card {
+  .service-card {
     padding: 28px 20px;
+  }
+
+  .section-title {
+    font-size: 28px;
   }
 
   .service-icon {
@@ -712,16 +578,27 @@ body {
     height: 50px;
     font-size: 20px;
   }
-
-  .service-card h3, .tech-card h3 {
-    font-size: 18px;
-  }
-
-  .service-card p, .tech-card p {
-    font-size: 13px;
-  }
+}
+/* =========================
+   TECH GRID 2x2 FIXED
+========================= */
+.tech-grid {
+  grid-template-columns: repeat(2, 1fr);
 }
 
+/* Mobile */
+@media (max-width: 600px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.tech-grid .service-card {
+  border: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+.tech-grid .service-card:hover {
+  box-shadow: 0 30px 60px rgba(124, 58, 237, 0.15);
+}
 /* ===============================
    STATIC CLIENT GRID (RESPONSIVE)
 ================================== */
