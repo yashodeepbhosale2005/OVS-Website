@@ -135,7 +135,43 @@ body {
 .menu-toggle i {
   display: block;
 }
+/* Mobile Navigation Improvements */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 20px;
+  }
 
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    padding-top: 80px;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 9999;
+  }
+
+  .nav.active {
+    transform: translateX(0);
+  }
+
+  .nav a {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 0;
+  }
+}
 /* Mobile */
 @media (max-width: 768px) {
   .menu-toggle {
@@ -282,7 +318,31 @@ body {
   color: white;
   transform: translateY(-4px);
 }
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 15px;
+    text-align: center;
+  }
 
+  .hero h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero h3 {
+    font-size: 20px;
+  }
+
+  .hero p {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 /* =========================
    STATS SECTION
 ========================= */
@@ -320,7 +380,24 @@ body {
   font-size: 14px;
   letter-spacing: 1px;
 }
+/* All sections mobile padding */
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 15px;
+  }
 
+  .services-grid,
+  .clients-grid,
+  .about-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-card, .tech-card, .about-card, .value-box {
+    padding: 20px 15px;
+  }
+}
 /* =========================
    SERVICES SECTION
 ========================= */
@@ -913,7 +990,16 @@ body {
   padding: 16px;
   font-size: 16px;
 }
+@media (max-width: 600px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 
+  .contact-form, .contact-info {
+    padding: 30px 20px;
+  }
+}
 /* ================= INFO SIDE ================= */
 
 .contact-info {
@@ -1098,7 +1184,21 @@ body {
 .social-links a:hover::before {
   transform: translate(-50%, -50%) scale(1);
 }
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
 
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer h3, .footer h4 {
+    text-align: center;
+  }
+}
 /* Responsive Footer */
 @media (max-width: 992px) {
   .footer-grid {
@@ -1177,4 +1277,22 @@ img, iframe, video {
   .nav.active {
     transform: translateX(0);
   }
+}
+
+/* Prevent horizontal scroll */
+body, html {
+  overflow-x: hidden;
+}
+
+/* Responsive media elements */
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+}
+body {
+  font-size: 15px; /* base mobile font */
+}
+
+.hero-inner, .section-inner {
+  padding: 0 10px;
 }
