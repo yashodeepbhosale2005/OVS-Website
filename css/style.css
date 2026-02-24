@@ -399,6 +399,91 @@ body {
   }
 }
 /* =========================
+   STATS SECTION MOBILE
+========================= */
+@media (max-width: 768px) {
+  .counter-grid {
+    flex-direction: column; /* Stack vertically on tablets & phones */
+    gap: 20px;
+    align-items: center;
+  }
+
+  .stats-card {
+    padding: 30px 15px;
+    width: 100%;
+    max-width: 350px; /* Avoid too wide cards on mobile */
+  }
+
+  .stats-card h2 {
+    font-size: 32px;
+  }
+
+  .stats-card p {
+    font-size: 13px;
+  }
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 480px) {
+  .counter-grid {
+    gap: 15px;
+  }
+
+  .stats-card {
+    padding: 20px 10px;
+    border-radius: 20px;
+  }
+
+  .stats-card h2 {
+    font-size: 28px;
+  }
+
+  .stats-card p {
+    font-size: 12px;
+  }
+}
+
+/* =========================
+   SERVICES SECTION MOBILE
+========================= */
+@media (max-width: 768px) {
+  .services-grid {
+    display: grid; /* Change from flex/grid combo if needed */
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 20px;
+  }
+
+  .service-card, .tech-card {
+    padding: 25px 15px;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+  }
+
+  .service-card p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    gap: 15px;
+  }
+
+  .service-card, .tech-card {
+    padding: 20px 10px;
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+  }
+
+  .service-card p {
+    font-size: 12px;
+  }
+}
+/* =========================
    SERVICES SECTION
 ========================= */
 .services-section {
@@ -930,26 +1015,27 @@ body {
   }
 }
 /* =========================
-   CONTACT SECTION – FINAL PREMIUM
+   CONTACT SECTION – DESKTOP & MOBILE
 ========================= */
 
-.contact-grid {
-  max-width: 1200px;
+/* Container for everything */
+.contact-section {
+  max-width: 900px;
   margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 20px;
 }
 
-/* ================= FORM SIDE ================= */
-
+/* ================= CONTACT FORM ================= */
 .contact-form {
-  background: rgba(255,255,255,0.75);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(15px);
-  padding: 45px;
+  padding: 45px 35px;
   border-radius: 25px;
-  border: 1px solid rgba(255,255,255,0.4);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
   transition: 0.3s ease;
 }
 
@@ -957,7 +1043,6 @@ body {
   transform: translateY(-5px);
 }
 
-/* INPUTS */
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
@@ -971,9 +1056,7 @@ body {
   transition: 0.3s ease;
 }
 
-.contact-form textarea {
-  resize: none;
-}
+.contact-form textarea { resize: none; }
 
 .contact-form input:focus,
 .contact-form textarea:focus,
@@ -984,53 +1067,47 @@ body {
   transform: translateY(-2px);
 }
 
-/* BUTTON */
 .full-btn {
   width: 100%;
   padding: 16px;
   font-size: 16px;
 }
-@media (max-width: 600px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
 
-  .contact-form, .contact-info {
-    padding: 30px 20px;
-  }
+.contact-form {
+  padding: 55px 40px; /* increased for more space */
 }
-/* ================= INFO SIDE ================= */
 
+.contact-lower-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;       /* more space between left & right */
+  margin-top: 30px; /* space below form */
+}
+/* ================= LOWER GRID: Contact Info + Map ================= */
+.contact-lower-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Left Column – Contact Info */
 .contact-info {
   background: linear-gradient(135deg, #f3e8ff, #ffe4e6);
-  padding: 45px;
+  padding: 35px 25px;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
-/* INFO ITEMS */
+/* Contact Items */
 .info-item {
   display: flex;
-  align-items: flex-start;
   gap: 15px;
-}
-.contact-form,
-.contact-info {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 0.8s ease forwards;
+  align-items: flex-start;
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .info-item i {
   font-size: 20px;
   color: var(--brand-accent);
@@ -1048,25 +1125,54 @@ body {
   line-height: 1.6;
 }
 
-/* MAP */
-.map iframe {
-  border-radius: 15px;
-  margin-top: 10px;
-}
-
-/* WHATSAPP BUTTON */
 .contact-info .btn-primary {
   margin-top: 10px;
   text-align: center;
 }
 
-/* ================= RESPONSIVE ================= */
+/* Right Column – Map */
+.map iframe {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
 
-@media (max-width: 992px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
+/* ================= FADE-UP ANIMATION ================= */
+.contact-form,
+.contact-info,
+.map {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .contact-lower-grid {
+    grid-template-columns: 1fr; /* stack vertically */
+    gap: 30px;
   }
-}/* =========================
+
+  .map iframe { min-height: 220px; }
+}
+
+@media (max-width: 600px) {
+  .contact-section { padding: 20px 15px; gap: 30px; }
+
+  .contact-form, .contact-info { padding: 25px 15px; }
+
+  .full-btn { padding: 14px; font-size: 15px; }
+
+  .info-item h4 { font-size: 15px; }
+  .info-item p { font-size: 13px; }
+}
+
+/* =========================
    FOOTER
 ========================= */
 .footer {
