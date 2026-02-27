@@ -1,0 +1,653 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI / UX Design | Nexora Media</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f8fafc;
+    overflow-x: hidden;
+  }
+
+  img, iframe, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  @media (max-width: 768px) {
+    .nav { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background: #fff; padding: 20px 0; box-shadow: 0 10px 10px rgba(0,0,0,0.05); }
+    .nav.active { display: flex; }
+    .menu-toggle { display: block; }
+  }
+
+  /* ================= SERVICE HERO ================= */
+  .service-hero {
+    padding: 150px 20px 100px;
+    text-align: center;
+    background: linear-gradient(135deg, #fdfbff, #f3e8ff, #ffe4e6);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-hero h1 {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #1e293b;
+    animation: fadeDown 0.8s ease forwards;
+  }
+
+  .service-hero p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 18px;
+    color: #64748b;
+    animation: fadeUp 1s ease forwards;
+  }
+/* ================= OFFER SECTION ================= */
+.offer-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.offer-section h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+.offer-intro {
+  max-width: 750px;
+  margin: 0 auto 60px;
+  text-align: center;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* ================= 3 X 3 GRID ================= */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 35px;
+}
+
+/* ================= OFFER CARD ================= */
+.offer-card {
+  background: #ffffff;
+  padding: 45px 30px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  transition: all 0.35s ease;
+}
+
+/* Hover Effect on Box */
+.offer-card:hover {
+  transform: translateY(-10px);
+  border-color: #6D28D9;
+  box-shadow: 
+    0 25px 50px rgba(109,40,217,0.12),
+    0 0 0 4px rgba(109,40,217,0.05);
+}
+
+/* ================= ICON ================= */
+.offer-icon {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #6D28D9;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+}
+
+/* Title */
+.offer-card h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  transition: color 0.3s ease;
+}
+
+.offer-card:hover h3 {
+  color: #6D28D9;
+}
+
+/* Description */
+.offer-card p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 992px) {
+  .offer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  .offer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-section {
+    padding: 70px 20px;
+  }
+
+  .offer-card {
+    padding: 35px 25px;
+  }
+}
+
+  /* ================= PROCESS SECTION ================= */
+  .process-section {
+    background: #f1f5f9;
+    padding: 100px 20px;
+  }
+
+  .process-inner {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .process-inner h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #1e293b;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .step {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    font-weight: 600;
+    font-size: 15px;
+    color: #334155;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .step:hover {
+    transform: translateY(-5px);
+    border-bottom: 3px solid #6D28D9;
+    box-shadow: 0 15px 35px rgba(109,40,217,0.1);
+  }
+
+  /* ================= CONTACT SECTION ================= */
+  .contact-section {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 80px 40px;
+  }
+
+  .contact-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 60px 50px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+  }
+
+  .contact-box h2 {
+    margin-bottom: 35px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    color: #1e293b;
+  }
+
+  .contact-box input, .contact-box textarea {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    background: #ffffff;
+    transition: 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+
+  .contact-box textarea { resize: none; }
+
+  .contact-box input:focus, .contact-box textarea:focus {
+    outline: none;
+    border-color: #6d28d9;
+    box-shadow: 0 0 0 4px rgba(109,40,217,0.12);
+    transform: translateY(-2px);
+  }
+
+  .contact-box button {
+    width: 100%;
+    padding: 18px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    background: linear-gradient(90deg, #6a11cb, #9c0f5f);
+    transition: all 0.4s ease;
+  }
+
+  .contact-box button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(156, 15, 95, 0.35);
+    background: linear-gradient(90deg, #7b1fe0, #b3126f);
+  }
+
+  .contact-lower-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .contact-info {
+    background: linear-gradient(135deg, #f3e8ff, #ffe4e6);
+    padding: 35px 25px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  }
+
+  .info-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .info-item i {
+    font-size: 20px;
+    color: #6d28d9;
+    margin-top: 4px;
+  }
+
+  .info-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #1e293b;
+  }
+
+  .info-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+  }
+
+  .full-btn {
+    text-align: center;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    display: block;
+  }
+  
+  .full-btn:hover { background: #128C7E; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
+
+  .map iframe {
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+  }
+
+  /* ================= ULTRA PREMIUM FLOATING CIRCLE ================= */
+  .side-contact {
+    position: fixed;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6D28D9, #8B1246);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    z-index: 999;
+    animation: floatMotion 4s ease-in-out infinite;
+    transition: 0.3s ease;
+  }
+
+  .side-contact::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6D28D9, #8B1246);
+    opacity: 0.15;
+    z-index: -1;
+    animation: glowRing 3s ease-in-out infinite;
+  }
+
+  @keyframes floatMotion {
+    0%, 100% { transform: translateY(-50%) translateY(0px); }
+    50% { transform: translateY(-50%) translateY(-10px); }
+  }
+
+  @keyframes glowRing {
+    0%, 100% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.15); opacity: 0.25; }
+  }
+
+  .side-contact:hover {
+    box-shadow: 0 30px 90px rgba(109,40,217,0.4);
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  /* ================= FOOTER ================= */
+  .footer {
+    background: #0b0b0d;
+    padding: 80px 20px 30px;
+    color: #9ca3af;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 50px;
+  }
+
+  .footer h3 { font-size: 22px; color: #ffffff; margin-bottom: 15px; }
+  .footer h4 { font-size: 16px; color: #ffffff; margin-bottom: 18px; }
+  .footer p { font-size: 14px; line-height: 1.7; }
+  .footer a { color: #9ca3af; text-decoration: none; transition: 0.3s ease; }
+  .footer a:hover { color: #ffffff; }
+  .footer ul { list-style: none; padding: 0; }
+  .footer ul li { margin-bottom: 10px; font-size: 14px; }
+
+  .social-links { display: flex; gap: 12px; margin-top: 15px; }
+  .social-links a {
+    display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: #1a1a1f; color: #ffffff; font-size: 16px;
+    transition: all 0.3s ease; position: relative; overflow: hidden;
+  }
+  .social-links a:hover { transform: translateY(-5px) scale(1.1); color: #fff; box-shadow: 0 8px 25px rgba(0,0,0,0.25); }
+  .social-links a.facebook:hover { background: #3b5998; }
+  .social-links a.instagram:hover { background: #E1306C; }
+  .social-links a.linkedin:hover { background: #0077B5; }
+  .social-links a.youtube:hover { background: #FF0000; }
+
+  .footer-bottom {
+    margin-top: 60px; padding-top: 20px;
+    border-top: 1px solid #26262b; text-align: center;
+    font-size: 13px; color: #6b7280;
+  }
+
+  /* Animations */
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .contact-lower-grid { grid-template-columns: 1fr; }
+    .side-contact { width: 90px; height: 90px; font-size: 11px; right: 15px; }
+    .contact-section { padding: 40px 20px; }
+    .contact-box { padding: 40px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="brand">
+    <img src="/images/logo.png" class="logo-img" alt="Logo">
+    <div>
+      <div class="logo-main"><span class="grad-magenta">NEXORA</span> MEDIA</div>
+      <div class="logo-sub">Powered by OVS Group Pune</div>
+    </div>
+  </div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="#contact" class="nav-cta">Get Quote</a>
+  </nav>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+
+<section class="service-hero">
+  <h1>UI / UX Design Studio</h1>
+  <p>
+    We Craft Intuitive, Engaging, And User-Centered Digital Experiences. From High-Fidelity Prototypes to Complete Design Systems , we Turn Complex Problems into Beautiful, Usable Interfaces.
+  </p>
+</section>
+
+<section class="offer-section">
+  <h2>Our Design Expertise</h2>
+  <p class="offer-intro">
+    Great design is more than just aesthetics; it's about solving user problems. We focus on creating seamless journeys that increase user engagement and drive conversions.
+  </p>
+  
+  <div class="offer-grid">
+
+    <div class="offer-card">
+      <div class="offer-icon"><i class="fas fa-search"></i></div>
+      <h3>User Research & Strategy</h3>
+      <p>We analyze user behaviors, map out user journeys, and create detailed personas to ensure your product solves real market needs.</p>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-icon"><i class="fas fa-layer-group"></i></div>
+      <h3>Wireframing & Architecture</h3>
+      <p>Building the structural blueprint of your app or website to ensure logical flow, easy navigation, and optimal information hierarchy.</p>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-icon"><i class="fas fa-mobile-alt"></i></div>
+      <h3>Mobile App UI</h3>
+      <p>Designing thumb-friendly, visually stunning interfaces for iOS and Android platforms tailored to human interface guidelines.</p>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-icon"><i class="fas fa-laptop-code"></i></div>
+      <h3>Web & SaaS Design</h3>
+      <p>Creating powerful, responsive web dashboards and SaaS platforms that make complex data feel accessible and easy to manage.</p>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-icon"><i class="fas fa-mouse-pointer"></i></div>
+      <h3>Interactive Prototyping</h3>
+      <p>Delivering clickable, high-fidelity prototypes that look and feel like the real product, allowing you to test before development.</p>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-icon"><i class="fas fa-vial"></i></div>
+      <h3>Usability Testing</h3>
+      <p>Conducting real-world user tests to identify pain points, iterate on feedback, and polish the interface prior to final launch.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="process-inner">
+    <h2>Our Design Process</h2>
+    <div class="process-steps">
+      <div class="step">1️⃣ Discovery & Research</div>
+      <div class="step">2️⃣ Wireframing & Flow</div>
+      <div class="step">3️⃣ Visual Design (UI)</div>
+      <div class="step">4️⃣ Prototyping & Motion</div>
+      <div class="step">5️⃣ Testing & Dev Handoff</div>
+    </div>
+  </div>
+</section>
+
+<a href="#contact" class="side-contact">Discuss Your <br>Idea</a>
+
+<section id="contact" class="contact-section">
+  <div class="contact-box">
+    <h2>Let's Design Something Amazing</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea rows="5" placeholder="Tell us about your application, website, or design goals..."></textarea>
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+
+  <div class="contact-lower-grid">
+    <div class="contact-info">
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <h4>Address</h4>
+          <p>OVS Group Pune,<br>Pune, Maharashtra, India</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <i class="fas fa-phone"></i>
+        <div>
+          <h4>Phone</h4>
+          <p>+91 8446243639</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <h4>Email</h4>
+          <p>ovsmedia25@gmail.com</p>
+        </div>
+      </div>
+
+      <a href="https://wa.me/918446243639" target="_blank" class="full-btn" style="margin-top:15px;">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+
+    <div class="map">
+      <iframe 
+        src="https://maps.google.com/maps?q=Pune,%20Maharashtra,%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+
+      <div class="footer-about">
+        <h3>Nexora Media</h3>
+        <p>Delivering professional branding, UX/UI design, web development, and advertising solutions with innovation.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="ui-ux-design.html">UI / UX Design</a></li>
+          <li><a href="web-development.html">Web Development</a></li>
+          <li><a href="digital-solutions.html">Digital Solutions</a></li>
+          <li><a href="led-advertising.html">LED Screen Advertising</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/work.html">Our Work</a></li>
+          <li><a href="/index.html#about">About Us</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Phone: <a href="tel:+918007392979">+91 8007392979</a></p>
+        <p>Email: <a href="mailto:ovsmedia25@gmail.com">ovsmedia25@gmail.com</a></p>
+        <div class="social-links">
+          <a href="#" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/nexoramedia25" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/112027444/" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Nexora Media. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('nav');
+
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>

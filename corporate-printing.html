@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Printing | Nexora Media</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f8fafc;
+  }
+
+  /* ================= SERVICE HERO ================= */
+  .service-hero {
+    padding: 150px 20px 100px;
+    text-align: center;
+    background: linear-gradient(135deg, #fdfbff, #f3e8ff, #ffe4e6);
+  }
+
+  .service-hero h1 {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  .service-hero p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 18px;
+    color: #64748b;
+  }
+
+  /* ================= WHAT WE OFFER ================= */
+  .offer-section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .offer-section h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 60px;
+  }
+
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+  }
+
+  .offer-intro {
+    max-width: 750px;
+    margin: 0 auto 60px;
+    text-align: center;
+    color: #64748b;
+    font-size: 16px;
+  }
+
+  .offer-card {
+    background: #ffffff;
+    padding: 45px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: .3s ease;
+  }
+
+  .offer-card:hover {
+    transform: translateY(-8px);
+  }
+
+  /* ================= PREMIUM OFFER ICON ================= */
+  .offer-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #6D28D9;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    transition: all .3s ease;
+  }
+
+  .offer-icon::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6D28D9, #8B1246);
+    z-index: -1;
+    opacity: .12;
+    transition: .3s ease;
+  }
+
+  .offer-card:hover .offer-icon {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(109,40,217,0.18);
+  }
+
+  .offer-card:hover .offer-icon::before {
+    opacity: .2;
+  }
+
+  .offer-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  .offer-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.6;
+  }
+ /* ================= PROCESS SECTION ================= */
+  .process-section {
+    background: #f1f5f9;
+    padding: 100px 20px;
+  }
+
+  .process-inner {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .process-inner h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #1e293b;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .step {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    font-weight: 600;
+    font-size: 15px;
+    color: #334155;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .step:hover {
+    transform: translateY(-5px);
+    border-bottom: 3px solid #6D28D9;
+    box-shadow: 0 15px 35px rgba(109,40,217,0.1);
+  }
+
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 768px) {
+  .process-section {
+    padding: 60px 15px; /* Reduced padding for smaller screens */
+  }
+
+  .process-inner h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .process-steps {
+    flex-direction: column; /* Stack steps vertically */
+    align-items: center;
+    gap: 15px; /* Tighter gap for mobile flow */
+  }
+
+  .step {
+    width: 100%; /* Full width cards */
+    max-width: 450px; /* Prevents cards from getting too wide on tablets */
+    padding: 18px 25px; /* Slightly compact padding */
+    text-align: center;
+  }
+}
+
+  /* ================= FUTURE MEDIA ================= */
+  .future-media {
+    margin-top: 60px;
+    padding: 60px;
+    background: #e5e7eb;
+    border-radius: 16px;
+    text-align: center;
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  /* ================= CONTACT SECTION ================= */
+  .contact-section {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 40px;
+  }
+
+  .contact-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 60px 50px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+  }
+
+  .contact-box:hover {
+    transform: translateY(-5px);
+  }
+
+  .contact-box h2 {
+    margin-bottom: 35px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .contact-box input,
+  .contact-box textarea {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    background: #ffffff;
+    transition: 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .contact-box textarea {
+    resize: none;
+  }
+
+  .contact-box input:focus,
+  .contact-box textarea:focus {
+    outline: none;
+    border-color: #6d28d9;
+    box-shadow: 0 0 0 4px rgba(109,40,217,0.12);
+    transform: translateY(-2px);
+  }
+
+  .contact-box button {
+    width: 100%;
+    padding: 18px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    background: linear-gradient(90deg, #6a11cb, #9c0f5f);
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeButton 0.8s ease forwards;
+  }
+
+  .contact-box button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(156, 15, 95, 0.35);
+    background: linear-gradient(90deg, #7b1fe0, #b3126f);
+  }
+
+  .contact-box button:active {
+    transform: translateY(0);
+  }
+
+  @keyframes fadeButton {
+    to { opacity: 1; }
+  }
+
+  .contact-lower-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+  .contact-info {
+    background: linear-gradient(135deg, #f3e8ff, #ffe4e6);
+    padding: 35px 25px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  }
+
+  .info-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .info-item i {
+    font-size: 20px;
+    color: #6d28d9;
+    margin-top: 4px;
+  }
+
+  .info-item h4 {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+  .info-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .contact-info .btn-primary {
+    margin-top: 10px;
+    text-align: center;
+    display: inline-block;
+    padding: 12px 20px;
+    background: #25D366;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+  }
+  
+  .contact-info .btn-primary:hover {
+    background: #1ebe57;
+    transform: translateY(-2px);
+  }
+
+  .map iframe {
+    border-radius: 15px;
+    width: 100%;
+    min-height: 300px;
+  }
+
+  .contact-box,
+  .contact-info,
+  .map {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ================= MOBILE VIEW ================= */
+  @media (max-width: 768px) {
+    .contact-section {
+      padding: 30px 20px;
+      gap: 30px;
+    }
+    .contact-box {
+      padding: 35px 20px;
+      border-radius: 20px;
+    }
+    .contact-box h2 {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+    .contact-box input,
+    .contact-box textarea {
+      padding: 14px;
+      font-size: 14px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+    }
+    .contact-box button {
+      padding: 16px;
+      font-size: 15px;
+    }
+    .contact-lower-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+    .contact-info {
+      padding: 25px 18px;
+      border-radius: 20px;
+    }
+    .map iframe {
+      min-height: 220px;
+    }
+  }
+
+  
+  /* ================= ULTRA PREMIUM FLOATING CIRCLE ================= */
+  .side-contact {
+    position: fixed;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6D28D9, #8B1246);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    z-index: 999;
+    animation: floatMotion 4s ease-in-out infinite;
+    transition: 0.3s ease;
+  }
+
+  .side-contact::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6D28D9, #8B1246);
+    opacity: 0.15;
+    z-index: -1;
+    animation: glowRing 3s ease-in-out infinite;
+  }
+
+  @keyframes floatMotion {
+    0%, 100% { transform: translateY(-50%) translateY(0px); }
+    50% { transform: translateY(-50%) translateY(-10px); }
+  }
+
+  @keyframes glowRing {
+    0%, 100% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.15); opacity: 0.25; }
+  }
+
+  .side-contact:hover {
+    box-shadow: 0 30px 90px rgba(109,40,217,0.4);
+    transform: translateY(-50%) scale(1.05);
+  }
+
+
+
+  @keyframes floatMotion {
+    0% { transform: translateY(-50%) translateY(0px); }
+    50% { transform: translateY(-50%) translateY(-8px); }
+    100% { transform: translateY(-50%) translateY(0px); }
+  }
+
+  @keyframes glowRing {
+    0% { transform: scale(1); opacity: .15; }
+    50% { transform: scale(1.15); opacity: .25; }
+    100% { transform: scale(1); opacity: .15; }
+  }
+
+  .side-contact:active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255,255,255,.3);
+    animation: ripple .6s ease-out;
+  }
+
+  @keyframes ripple {
+    0% { transform: scale(0); opacity: .6; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+
+  .side-contact:hover {
+    box-shadow: 0 30px 90px rgba(109,40,217,.4);
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  /* ================= FOOTER STYLES ================= */
+  .footer {
+    background: #0b0b0d;
+    padding: 80px 20px 30px;
+    color: #9ca3af;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+  }
+
+  .footer h3 {
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    margin-top: 0;
+  }
+
+  .footer h4 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 18px;
+    margin-top: 0;
+  }
+
+  .footer p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .footer a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: 0.3s ease;
+  }
+
+  .footer a:hover {
+    color: #ffffff;
+  }
+
+  .footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #26262b;
+    text-align: center;
+    font-size: 13px;
+    color: #6b7280;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #1a1a1f;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .social-links a:hover {
+    transform: translateY(-5px) scale(1.1);
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  }
+
+  .social-links a.facebook:hover { background: #3b5998; }
+  .social-links a.instagram:hover { background: #E1306C; }
+  .social-links a.linkedin:hover { background: #0077B5; }
+  .social-links a.youtube:hover { background: #FF0000; }
+
+  .social-links a::before {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+  }
+
+  .social-links a:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      text-align: center;
+    }
+    .social-links {
+      justify-content: center;
+    }
+  }
+
+  /* ================= MOBILE & GENERAL FIXES ================= */
+  body, html {
+    overflow-x: hidden;
+  }
+
+  img, iframe, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  body {
+    font-size: 15px;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="brand">
+    <img src="/images/logo.png" class="logo-img" alt="Logo">
+    <div>
+      <div class="logo-main">
+        <span class="grad-magenta">NEXORA</span> MEDIA
+      </div>
+      <div class="logo-sub">Powered by OVS Group Pune</div>
+    </div>
+  </div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="#contact" class="nav-cta">Get Quote</a>
+  </nav>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+
+<section class="service-hero">
+  <h1>Corporate Printing Solutions</h1>
+  <p>
+    Elevate your brand's professional image with premium printing. From elegant visiting cards and high-quality brochures to official corporate documentation, we deliver perfection in every print.
+  </p>
+</section>
+
+<section class="offer-section">
+  <h2>Our Corporate Printing Services</h2>
+
+  <p class="offer-intro">
+    We provide comprehensive offset and digital printing solutions tailored for modern businesses, ensuring your marketing materials and office stationery reflect absolute premium quality.
+  </p>
+
+  <div class="offer-grid">
+
+    <div class="offer-card">
+      <div class="offer-icon">
+        <i class="fas fa-id-card"></i>
+      </div>
+      <h3>Premium Business Cards</h3>
+      <p>
+        Make a lasting first impression with sophisticated, high-GSM visiting cards featuring custom finishes like spot UV, metallic foil, and embossing.
+      </p>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-icon">
+        <i class="fas fa-book-open"></i>
+      </div>
+      <h3>Marketing Collaterals</h3>
+      <p>
+        High-impact brochures, product catalogs, and corporate flyers designed and printed to effectively communicate your services to clients.
+      </p>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-icon">
+        <i class="fas fa-folder-open"></i>
+      </div>
+      <h3>Corporate Stationery</h3>
+      <p>
+        Ensure brand consistency across all official correspondence with custom-designed letterheads, branded envelopes, diaries, and presentation folders.
+      </p>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-icon">
+        <i class="fas fa-print"></i>
+      </div>
+      <h3>Offset & Bulk Printing</h3>
+      <p>
+        State-of-the-art offset and digital printing capabilities for high-volume corporate documentation, annual reports, and training manuals with flawless color accuracy.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="future-media">
+    Corporate Print Portfolio 
+    <br><span style="font-weight: 400; font-size: 14px;">(High-res samples & mockups of printed materials will appear here)</span>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="process-inner">
+    <h2>Our Printing Process</h2>
+    <div class="process-steps">
+      <div class="step">1️⃣ Requirement Gathering</div>
+      <div class="step">2️⃣ Design & Proofing</div>
+      <div class="step">3️⃣ Pre-Press & Paper Selection</div>
+      <div class="step">4️⃣ Precision Printing</div>
+      <div class="step">5️⃣ Quality Check & Delivery</div>
+    </div>
+  </div>
+</section>
+
+<a href="#contact" class="side-contact">Get In Touch</a>
+
+<section id="contact" class="contact-section">
+
+  <div class="contact-box">
+    <h2>Get a Custom Quotation</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea rows="5" placeholder="Tell us about your printing requirements (e.g., quantity, paper type, material)..."></textarea>
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+
+  <div class="contact-lower-grid">
+    
+    <div class="contact-info">
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <h4>Address</h4>
+          <p>OVS Group Pune,<br>Pune, Maharashtra, India</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <i class="fas fa-phone"></i>
+        <div>
+          <h4>Phone</h4>
+          <p>+91 8446243639</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <h4>Email</h4>
+          <p>ovsmedia25@gmail.com</p>
+        </div>
+      </div>
+
+      <a href="https://wa.me/918446243639" target="_blank" class="btn-primary full-btn" style="margin-top:15px;">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+
+    <div class="map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121059.04711153835!2d73.7805654157585!3d18.524603553427306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+
+      <div class="footer-about">
+        <h3>Nexora Media</h3>
+        <p>Delivering professional branding, printing, and advertising solutions with precision, innovation, and creativity.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="design-print.html">Printing Solutions</a></li>
+          <li><a href="led-advertising.html">LED Screen Advertising</a></li>
+          <li><a href="corporate-printing.html">Corporate Printing</a></li>
+          <li><a href="event-branding.html">Event & Outdoor</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="work.html">Our Work</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Phone: <a href="tel:+918446243639">+91 8446243639</a></p>
+        <p>Email: <a href="mailto:ovsmedia25@gmail.com">ovsmedia25@gmail.com</a></p>
+        <div class="social-links">
+          <a href="#" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/nexoramedia25" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/112027444/" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Nexora Media. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav');
+
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>

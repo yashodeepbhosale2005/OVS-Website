@@ -1,271 +1,747 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!DOCTYPE html> 
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UrbanMark Media | Web Development Portfolio</title>
+<title>Web Development | Nexora Media</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-/* =========================
-   THEME VARIABLES
-========================= */
-:root {
-  --brand-magenta: #8B1246;
-  --brand-orange: #FF6A00;
-  --brand-accent: #6D28D9;
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f8fafc;
+    overflow-x: hidden;
+  }
 
-  --bg-main: #f8fafc;
-  --bg-header: #ffffff;
-  --bg-card: #ffffff;
-  --bg-light: #f1f5f9;
+  /* Make images, iframes, videos responsive */
+  img, iframe, video {
+    max-width: 100%;
+    height: auto;
+  }
 
-  --text-main: #0f172a;
-  --text-muted: #64748b;
 
-  --border-soft: #e5e7eb;
+
+
+  /* ================ SERVICE HERO ================= */
+  .service-hero {
+    padding: 150px 20px 100px;
+    text-align: center;
+    background: linear-gradient(135deg, #fdfbff, #f3e8ff, #ffe4e6);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-hero h1 {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #1e293b;
+    animation: fadeDown 0.8s ease forwards;
+  }
+
+  .service-hero p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 18px;
+    color: #64748b;
+    animation: fadeUp 1s ease forwards;
+  }
+
+ /* ================= PORTFOLIO GRID ================= */
+.portfolio-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
-/* =========================
-   GLOBAL
-========================= */
-* { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
-body { background: var(--bg-main); color: var(--text-main); line-height: 1.6; }
-a { text-decoration: none; }
+.portfolio-section h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 60px;
+  color: #1e293b;
+}
 
-/* =========================
-   HEADER AND NAV
-========================= */
-.header {
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+}
+
+/* --- Entry Animation Keyframes --- */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Portfolio Card --- */
+.portfolio-card {
+  background: #ffffff;
+  padding: 45px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0,0,0,0.02);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 15px 40px;
-  background: var(--bg-header, #fff);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 700;
-  font-size: 22px;
-  color: #000; /* black brand font */
-}
-
-.logo-img {
-  width: 90px;
-  height: 60px;
-}
-
-.logo-main {
-  font-size: 26px;
-  font-weight: 800;
-  color: #000; /* black brand text */
-}
-
-.nav {
-  display: flex;
-  gap: 26px;
-}
-
-.nav a {
   position: relative;
-  color: #000; /* black nav text */
-  font-weight: 600;
-  font-size: 16px;
-  padding: 5px 0;
-  transition: all 0.25s ease-in-out;
+  overflow: hidden; /* Important for the shine effect */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
 }
 
-.nav a:hover,
-.nav a.active {
-  color: var(--brand-magenta);
-  font-weight: 700;
-  transform: scale(1.05); /* subtle zoom on hover or active */
+/* Stagger animations for cards */
+.portfolio-card:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-card:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-card:nth-child(3) { animation-delay: 0.3s; }
+.portfolio-card:nth-child(4) { animation-delay: 0.4s; }
+.portfolio-card:nth-child(5) { animation-delay: 0.5s; }
+.portfolio-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* --- CARD HOVER STATES --- */
+.portfolio-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(109, 40, 217, 0.15);
+  border-color: rgba(109, 40, 217, 0.2);
 }
 
-.nav a::after {
+/* Premium Glass Shine on Hover */
+.portfolio-card::after {
   content: "";
   position: absolute;
-  width: 0;
-  height: 2px;
-  left: 0;
-  bottom: -4px;
-  background: var(--brand-magenta);
-  transition: width 0.3s ease-in-out;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: 0.7s;
 }
 
-.nav a:hover::after,
-.nav a.active::after {
-  width: 100%;
+.portfolio-card:hover::after {
+  left: 150%;
 }
 
-/* MOBILE RESPONSIVE HEADER */
-.menu-toggle {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-  color: #000;
+/* --- Premium Glowing Icon --- */
+.offer-icon {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #6D28D9;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  z-index: 2;
 }
 
-.menu-toggle i {
-  display: block;
+.offer-icon::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6D28D9, #8B1246);
+  z-index: -1;
+  opacity: 0.12;
+  transition: 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
+.portfolio-card:hover .offer-icon {
+  transform: translateY(-5px) scale(1.1);
+  color: #8B1246;
+  box-shadow: 0 18px 40px rgba(109, 40, 217, 0.18);
+}
+
+.portfolio-card:hover .offer-icon::before {
+  opacity: 0.3;
+  inset: -6px;
+}
+
+/* --- Text Styling --- */
+.portfolio-card h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #1e293b;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.portfolio-card:hover h3 {
+  color: #6D28D9;
+}
+
+.portfolio-card p {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  flex-grow: 1; /* Pushes button to bottom */
+}
+
+/* --- Button Styling --- */
+.btn-visit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: linear-gradient(90deg, #6a11cb, #9c0f5f);
+  color: #ffffff !important;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.4s ease;
+  width: 80%;
+  border: none;
+}
+
+.btn-visit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(156, 15, 95, 0.35);
+  filter: brightness(1.1);
+}
+  /* ================= PROCESS SECTION ================= */
+  .process-section {
+    background: #f1f5f9;
+    padding: 100px 20px;
+  }
+
+  .process-inner {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .process-inner h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #1e293b;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .step {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    font-weight: 600;
+    font-size: 15px;
+    color: #334155;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .step:hover {
+    transform: translateY(-5px);
+    border-bottom: 3px solid #6D28D9;
+    box-shadow: 0 15px 35px rgba(109,40,217,0.1);
+  }
+
+  /* ================= CONTACT SECTION ================= */
+  .contact-section {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 80px 40px;
+  }
+
+  .contact-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 60px 50px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+  }
+
+  .contact-box h2 {
+    margin-bottom: 35px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    color: #1e293b;
+  }
+
+  .contact-box input, .contact-box textarea {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    background: #ffffff;
+    transition: 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+
+  .contact-box textarea { resize: none; }
+
+  .contact-box input:focus, .contact-box textarea:focus {
+    outline: none;
+    border-color: #6d28d9;
+    box-shadow: 0 0 0 4px rgba(109,40,217,0.12);
+    transform: translateY(-2px);
+  }
+
+  .contact-box button {
+    width: 100%;
+    padding: 18px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    background: linear-gradient(90deg, #6a11cb, #9c0f5f);
+    transition: all 0.4s ease;
+  }
+
+  .contact-box button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(156, 15, 95, 0.35);
+    background: linear-gradient(90deg, #7b1fe0, #b3126f);
+  }
+
+  .contact-lower-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .contact-info {
+    background: linear-gradient(135deg, #f3e8ff, #ffe4e6);
+    padding: 35px 25px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  }
+
+  .info-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .info-item i {
+    font-size: 20px;
+    color: #6d28d9;
+    margin-top: 4px;
+  }
+
+  .info-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #1e293b;
+  }
+
+  .info-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+  }
+
+  .full-btn {
+    text-align: center;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
     display: block;
   }
-  .nav {
-    display: none;
-    flex-direction: column;
+  
+  .full-btn:hover { background: #128C7E; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
+
+  .map iframe {
+    border-radius: 25px;
     width: 100%;
-    background: #fff;
-    padding: 15px 0;
+    height: 100%;
+    min-height: 300px;
   }
-  .nav.active {
+
+  /* ================= ULTRA PREMIUM FLOATING CIRCLE ================= */
+  .side-contact {
+    position: fixed;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6D28D9, #8B1246);
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    z-index: 999;
+    animation: floatMotion 4s ease-in-out infinite;
+    transition: 0.3s ease;
   }
-}
 
-/* =========================
-   CLIENT PORTFOLIO GRID
-========================= */
-main { padding:80px 5%; }
-h2 { text-align:center; color:var(--brand-magenta); font-size:36px; margin-bottom:50px; }
-.project-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px; }
-.project-card { background:var(--bg-card); border-radius:10px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:center; transition:0.3s; }
-.project-card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
-.project-card h3 { color:var(--brand-magenta); margin-bottom:10px; font-size:20px; }
-.project-card p { font-size:14px; color:var(--text-muted); margin-bottom:10px; }
-.project-card a { color:#1a73e8; font-weight:500; }
-.project-card a:hover { text-decoration:underline; }
+  .side-contact::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6D28D9, #8B1246);
+    opacity: 0.15;
+    z-index: -1;
+    animation: glowRing 3s ease-in-out infinite;
+  }
 
-/* =========================
-   FOOTER
-========================= */
-.footer { background:#0b0b0d; padding:80px 20px 30px; color:#9ca3af; font-family:'Poppins',sans-serif; }
-.footer-container { max-width:1200px; margin:auto; }
-.footer-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:50px; }
-.footer h3, .footer h4 { color:#ffffff; }
-.footer h3 { font-size:22px; margin-bottom:15px; }
-.footer h4 { font-size:16px; margin-bottom:18px; }
-.footer p, .footer ul li { font-size:14px; line-height:1.7; }
-.footer a { color:#9ca3af; transition:0.3s ease; }
-.footer a:hover { color:#ffffff; }
-.footer ul { list-style:none; padding:0; }
-.footer-bottom { margin-top:60px; padding-top:20px; border-top:1px solid #26262b; text-align:center; font-size:13px; color:#6b7280; }
+  @keyframes floatMotion {
+    0%, 100% { transform: translateY(-50%) translateY(0px); }
+    50% { transform: translateY(-50%) translateY(-10px); }
+  }
 
-/* Social Icons */
-.social-links { display:flex; gap:12px; margin-top:15px; }
-.social-links a {
-  display:flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%;
-  background:#1a1a1f; color:#fff; font-size:16px; transition:all 0.3s ease; position:relative; overflow:hidden;
-}
-.social-links a:hover { transform:translateY(-5px) scale(1.1); box-shadow:0 8px 25px rgba(0,0,0,0.25); }
-.social-links a.facebook:hover { background:#3b5998; }
-.social-links a.instagram:hover { background:#E1306C; }
-.social-links a.linkedin:hover { background:#0077B5; }
-.social-links a.youtube:hover { background:#FF0000; }
+  @keyframes glowRing {
+    0%, 100% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.15); opacity: 0.25; }
+  }
 
-/* Mobile */
-@media (max-width:768px) {
-  .menu-toggle { display:block; }
-  .nav { display:none; flex-direction:column; width:100%; background:#fff; padding:20px 0; }
-  .nav.active { display:flex; }
-}
-@media (max-width:992px) { .footer-grid { grid-template-columns:repeat(2,1fr); gap:40px; } }
-@media (max-width:600px) { .footer-grid { grid-template-columns:1fr; gap:30px; text-align:center; } .social-links{justify-content:center;} }
+  .side-contact:hover {
+    box-shadow: 0 30px 90px rgba(109,40,217,0.4);
+    transform: translateY(-50%) scale(1.05);
+  }
 
+  /* ================= FOOTER ================= */
+  .footer {
+    background: #0b0b0d;
+    padding: 80px 20px 30px;
+    color: #9ca3af;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 50px;
+  }
+
+  .footer h3 { font-size: 22px; color: #ffffff; margin-bottom: 15px; }
+  .footer h4 { font-size: 16px; color: #ffffff; margin-bottom: 18px; }
+  .footer p { font-size: 14px; line-height: 1.7; }
+  .footer a { color: #9ca3af; text-decoration: none; transition: 0.3s ease; }
+  .footer a:hover { color: #ffffff; }
+  .footer ul { list-style: none; padding: 0; }
+  .footer ul li { margin-bottom: 10px; font-size: 14px; }
+
+  .social-links { display: flex; gap: 12px; margin-top: 15px; }
+  .social-links a {
+    display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: #1a1a1f; color: #ffffff; font-size: 16px;
+    transition: all 0.3s ease; position: relative; overflow: hidden;
+  }
+  .social-links a:hover { transform: translateY(-5px) scale(1.1); color: #fff; box-shadow: 0 8px 25px rgba(0,0,0,0.25); }
+  .social-links a.facebook:hover { background: #3b5998; }
+  .social-links a.instagram:hover { background: #E1306C; }
+  .social-links a.linkedin:hover { background: #0077B5; }
+  .social-links a.youtube:hover { background: #FF0000; }
+
+  .footer-bottom {
+    margin-top: 60px; padding-top: 20px;
+    border-top: 1px solid #26262b; text-align: center;
+    font-size: 13px; color: #6b7280;
+  }
+
+  /* Animations */
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .contact-lower-grid { grid-template-columns: 1fr; }
+    .side-contact { width: 90px; height: 90px; font-size: 11px; right: 15px; }
+    .contact-section { padding: 40px 20px; }
+    .contact-box { padding: 40px 20px; }
+  }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <div class="brand">
-    <img src="images/logo.png" class="logo-img" alt="UrbanMark Logo">
-    <div class="logo-main"><span class="grad-magenta">NEXORA </span> MEDIA</div>
+    <img src="/images/logo.png" class="logo-img" alt="Logo">
+    <div>
+      <div class="logo-main"><span class="grad-magenta">NEXORA</span> MEDIA</div>
+      <div class="logo-sub">Powered by OVS Group Pune</div>
+    </div>
   </div>
-
-  <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
 
   <nav class="nav" id="nav">
     <a href="index.html">Home</a>
-    <a href="#" class="active">Web Development</a> <!-- current page -->
-    <a href="index.html#about">About Us</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="#contact" class="nav-cta">Get Quote</a>
   </nav>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
 </header>
 
-<!-- MAIN CONTENT -->
-<main id="main-content">
-  <h2>Our Web Development Clients</h2>
-  <div class="project-grid">
-    <div class="project-card"><h3>AnadaTech</h3><p>Fintech infrastructure & payment solutions platform built for scale and speed.</p><a href="https://anadatech.com/" target="_blank">Visit Website</a></div>
-    <div class="project-card"><h3>DakshGuru</h3><p>Recruitment and HR consulting connecting companies with top talent efficiently.</p><a href="https://dakshguru.com/" target="_blank">Visit Website</a></div>
-    <div class="project-card"><h3>Gravitas India</h3><p>Business services and solutions company offering insights and consulting support.</p><a href="https://gravitasindia.co.in/" target="_blank">Visit Website</a></div>
-    <div class="project-card"><h3>KodeIQ Digital Marketing</h3><p>Digital marketing training institute and course provider in Pune.</p><a href="https://kodeiq.com/digital-marketing-course-pune.html" target="_blank">Visit Website</a></div>
-    <div class="project-card"><h3>Dormer Loft Conversion</h3><p>Showcase project highlighting home renovation and loft conversion designs.</p><a href="https://static.wixstatic.com/media/2e9333_4dc7df24438046c5bfa0058ff84db31b~mv2.png" target="_blank">View</a></div>
-    <div class="project-card"><h3>DOT Consulting</h3><p>Corporate trends, business insights, and professional consulting services.</p><a href="https://www.dot-consulting.org/articles/business-and-corporate-trends-to-watch-now.html" target="_blank">Visit Website</a></div>
-    <div class="project-card"><h3>Cookie Cartel</h3><p>Fashion ecommerce site showcasing collection bundles for customers.</p><a href="https://cookiecartel.in/pages/collection-bundle/?b=c573d7c5-3479-4e78-96a4-f3d4df79c544" target="_blank">Visit Website</a></div>
-    <div class="project-card"><h3>Kumbhar Tours</h3><p>Travel & tours service provider website for booking and itinerary showcases.</p><a href="https://kumbhartours.com/" target="_blank">Visit Website</a></div>
-    <div class="project-card"><h3>Mane Travels</h3><p>Travel agency home page with booking and service information.</p><a href="https://manetravels.com/" target="_blank">Visit Website</a></div>
-    <div class="project-card"><h3>Sangli Car Rental</h3><p>Local car rental services website providing fleet and contact details.</p><a href="https://sanglicarrental.in/" target="_blank">Visit Website</a></div>
-  </div>
-</main>
+<section class="service-hero">
+  <h1>Modern Web Solutions</h1>
+  <p>
+    We Build High-Performance, SEO-Optimized, and Mobile-First Websites. From Fintech platforms to Travel Booking Systems, We Turn Code into Business Growth.
+  </p>
+</section>
 
-<!-- FOOTER -->
+<section class="portfolio-section">
+  <h2>Our Recent Work</h2>
+  <div class="portfolio-grid">
+
+    <div class="portfolio-card">
+      <div class="offer-icon"><i class="fas fa-shield-alt"></i></div>
+      <h3>AnadaTech</h3>
+      <p>Fintech infrastructure & payment solutions platform built for scale and speed.</p>
+      <a href="https://anadatech.com/" target="_blank" class="btn-visit">Explore Project <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="offer-icon"><i class="fas fa-user-tie"></i></div>
+      <h3>DakshGuru</h3>
+      <p>Recruitment and HR consulting connecting companies with top talent efficiently.</p>
+      <a href="https://dakshguru.com/" target="_blank" class="btn-visit">Explore Project <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="offer-icon"><i class="fas fa-chart-pie"></i></div>
+      <h3>Gravitas India</h3>
+      <p>Business consulting and corporate insights platform for industry leaders.</p>
+      <a href="https://gravitasindia.co.in/" target="_blank" class="btn-visit">Explore Project <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="offer-icon"><i class="fas fa-code"></i></div>
+      <h3>KodeIQ</h3>
+      <p>Digital marketing institute offering professional certification and LMS features.</p>
+      <a href="https://kodeiq.com/" target="_blank" class="btn-visit">Explore Project <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="offer-icon"><i class="fas fa-home"></i></div>
+      <h3>Dormer Loft</h3>
+      <p>Visual showcase for architectural home renovations and premium loft conversion designs.</p>
+      <a href="https://static.wixstatic.com/media/2e9333_4dc7df24438046c5bfa0058ff84db31b~mv2.png" target="_blank" class="btn-visit">View Project <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="offer-icon"><i class="fas fa-lightbulb"></i></div>
+      <h3>DOT Consulting</h3>
+      <p>A content-rich platform focused on corporate trends and professional consulting services.</p>
+      <a href="https://www.dot-consulting.org/articles/business-and-corporate-trends-to-watch-now.html" target="_blank" class="btn-visit">Visit Website <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="offer-icon"><i class="fas fa-shopping-bag"></i></div>
+      <h3>Cookie Cartel</h3>
+      <p>High-conversion fashion e-commerce site featuring smart collection bundling for customers.</p>
+      <a href="https://cookiecartel.in/pages/collection-bundle/?b=c573d7c5-3479-4e78-96a4-f3d4df79c544" target="_blank" class="btn-visit">Visit Website <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="offer-icon"><i class="fas fa-car"></i></div>
+      <h3>Sangli Car Rental</h3>
+      <p>Local car rental solution featuring fleet management and direct contact integration.</p>
+      <a href="https://sanglicarrental.in/" target="_blank" class="btn-visit">Visit Website <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="offer-icon"><i class="fas fa-plane"></i></div>
+      <h3>Kumbhar Tours</h3>
+      <p>Travel & tours service provider with custom itinerary and booking features.</p>
+      <a href="https://kumbhartours.com/" target="_blank" class="btn-visit">Explore Project <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="offer-icon"><i class="fas fa-bus"></i></div>
+      <h3>Mane Travels</h3>
+      <p>Travel agency website showcasing packages and real-time booking system.</p>
+      <a href="https://manetravels.com/" target="_blank" class="btn-visit">Explore Project <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="process-inner">
+    <h2>The Development Journey</h2>
+    <div class="process-steps">
+      <div class="step">1️⃣ UI/UX Wireframing</div>
+      <div class="step">2️⃣ Frontend Architecture</div>
+      <div class="step">3️⃣ Backend Integration</div>
+      <div class="step">4️⃣ Performance Testing</div>
+      <div class="step">5️⃣ Launch & SEO Setup</div>
+    </div>
+  </div>
+</section>
+
+<a href="#contact" class="side-contact">Start Your <br>Project</a>
+
+<section id="contact" class="contact-section">
+  <div class="contact-box">
+    <h2>Let's Discuss Your Web Project</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea rows="5" placeholder="Tell us about your web development requirements..."></textarea>
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+
+  <div class="contact-lower-grid">
+    <div class="contact-info">
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <h4>Address</h4>
+          <p>OVS Group Pune,<br>Pune, Maharashtra, India</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <i class="fas fa-phone"></i>
+        <div>
+          <h4>Phone</h4>
+          <p>+91 8446243639</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <h4>Email</h4>
+          <p>ovsmedia25@gmail.com</p>
+        </div>
+      </div>
+
+      <a href="https://wa.me/918446243639" target="_blank" class="full-btn" style="margin-top:15px;">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+
+    <div class="map">
+      <iframe 
+        src="https://maps.google.com/maps?q=Pune,%20Maharashtra,%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-grid">
-      <div class="footer-about"><h3>UrbanMark Advertising</h3><p>Delivering professional branding, printing, and advertising solutions with precision, innovation, and creativity.</p></div>
-      <div class="footer-links"><h4>Services</h4><ul><li>Printing Solutions</li><li>LED Screen Advertising</li><li>Political Branding</li><li>Corporate Campaigns</li></ul></div>
 
+      <div class="footer-about">
+        <h3>Nexora Media</h3>
+        <p>Delivering professional branding, printing, and advertising solutions with precision, innovation, and creativity.</p>
+      </div>
 
-    <div class="footer-links">
-  <h4>Quick Links</h4>
-  <ul>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#work">Our Work</a></li>
-    <li><a href="#about">About Us</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="digital-solutions.html">Digital Solutions</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="/design-print.html">Printing Solutions</a></li>
+          <li><a href="led-advertising.html">LED Screen Advertising</a></li>
+        </ul>
+      </div>
 
-<div class="footer-contact">
-  <h4>Contact</h4>
-  <p>Phone: <a href="tel:+918007392979">+91 8007392979</a></p>
-  <p>Email: <a href="mailto:ovsmedia25@gmail.com">ovsmedia25@gmail.com</a></p>
-  <div class="social-links">
-    <a href="#" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.instagram.com/nexoramedia25?utm_source=qr&igsh=OW9tZXJwa3NuNXo0" class="instagram" target="_blank">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.linkedin.com/company/112027444/" class="linkedin" target="_blank">
-      <i class="fab fa-linkedin-in"></i>
-    </a>
-    <a href="#" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
-  </div>
-</div>
-    <div class="footer-bottom">© 2026 UrbanMark Advertising. All Rights Reserved.</div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/work.html">Our Work</a></li>
+          <li><a href="/index.html#about">About Us</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Phone: <a href="tel:+918007392979">+91 8007392979</a></p>
+        <p>Email: <a href="mailto:ovsmedia25@gmail.com">ovsmedia25@gmail.com</a></p>
+        <div class="social-links">
+          <a href="#" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/nexoramedia25" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/112027444/" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Nexora Media. All Rights Reserved.
+    </div>
   </div>
 </footer>
 
+<script src="js/script.js"></script>
 <script>
 const menuToggle = document.getElementById('menu-toggle');
 const nav = document.getElementById('nav');
-menuToggle.addEventListener('click', () => { nav.classList.toggle('active'); });
+
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
 </script>
 
 </body>
