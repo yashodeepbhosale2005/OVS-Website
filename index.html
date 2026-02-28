@@ -197,62 +197,38 @@
     </div>
   </div>
 </section>
-  
 <section id="clients" class="trusted-section">
   <h2 class="section-title">
-    Trusted By 30+ Brands Across Industries
+    Trusted By 60+ Brands Across Industries
   </h2>
+  
+  <div class="logo-slider">
+    <div class="logo-track">
+<div class="client-card"><img src="images/Clients/IMG-20260224-WA0046.jpg" alt="Client 46"></div>
+      
+      <div class="client-card"><img src="images/Clients/images10.png"alt="Client 47"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0047.jpg" alt="Client 47"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0048.jpg" alt="Client 48"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0050.jpg" alt="Client 50"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0051.jpg" alt="Client 51"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0052.jpg" alt="Client 52"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0053.jpg" alt="Client 53"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0054.jpg" alt="Client 54"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0055.jpg" alt="Client 55"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0056.jpg" alt="Client 56"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0057.jpg" alt="Client 57"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0058.jpg" alt="Client 58"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0059.jpg" alt="Client 59"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0060.jpg" alt="Client 60"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0061.jpg" alt="Client 61"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260224-WA0062.jpg" alt="Client 62"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260226-WA0049.jpg" alt="Client 49"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260226-WA0055.jpg" alt="Client 55b"></div>
+      <div class="client-card"><img src="images/Clients/IMG-20260226-WA0087.jpg" alt="Client 87"></div>
 
-  <div class="clients-grid">
-
-    <!-- 36 Clients -->
-    <div class="client-card">Lotus Plaza</div>
-    <div class="client-card">Anand OP Scale Living</div>
-    <div class="client-card">SK Fortune Group</div>
-    <div class="client-card">Pushkar Co-operative</div>
-    <div class="client-card">Stella</div>
-    <div class="client-card">Ketki</div>
-
-    <div class="client-card">Golden Estate Agency</div>
-    <div class="client-card">Shiv Shrushti Park</div>
-    <div class="client-card">Shiv Sambho Developers</div>
-    <div class="client-card">Atlas Ganga Goel Group</div>
-    <div class="client-card">Authropsod</div>
-    <div class="client-card">Citius Tech</div>
-
-    <div class="client-card">Futurewave Technologies</div>
-    <div class="client-card">SP Group of Company</div>
-    <div class="client-card">Leeds Trinity University</div>
-    <div class="client-card">Learning Studio</div>
-    <div class="client-card">Royal Education Pune</div>
-    <div class="client-card">Foxen Educators</div>
-
-    <div class="client-card">WS Bakers</div>
-    <div class="client-card">Arya Infotech</div>
-    <div class="client-card">SMM State Mega Mart</div>
-    <div class="client-card">Boba Way</div>
-    <div class="client-card">Trends Publicity</div>
-    <div class="client-card">Pro Health Clinic</div>
-
-    <div class="client-card">Dr. Naik Dental Hospital</div>
-    <div class="client-card">Epson</div>
-    <div class="client-card">Pune District Bank</div>
-    <div class="client-card">PDCC Bank</div>
-    <div class="client-card">Gold by Jiva</div>
-    <div class="client-card">Kavedia Jeweller Pvt Ltd</div>
-
-    <div class="client-card">Soy Affair</div>
-    <div class="client-card">The Curry Leaves</div>
-    <div class="client-card">Haskool Stays</div>
-    <div class="client-card">Comfort Living Furniture</div>
-    <div class="client-card">Next Gen Polymer</div>
-    <div class="client-card">Gokul</div>
-
+    </div>
   </div>
 </section>
-
-
-
 
 <!-- ================= TESTIMONIALS ================= -->
 <section class="section light">
@@ -525,6 +501,21 @@ document.querySelectorAll(".nav a").forEach(link => {
 });
 </script>
 
-</script>
+const track = document.querySelector('.logo-track');
+track.innerHTML += track.innerHTML; // duplicate content for seamless scroll
+
+let position = 0;
+const speed = 1; // pixels per frame
+
+function animateMarquee() {
+  position -= speed;
+  if (Math.abs(position) >= track.scrollWidth / 2) {
+    position = 0;
+  }
+  track.style.transform = `translateX(${position}px)`;
+  requestAnimationFrame(animateMarquee);
+}
+
+animateMarquee();
 </body>
 </html>

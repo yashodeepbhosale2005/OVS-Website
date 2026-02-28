@@ -599,96 +599,73 @@ body {
 .tech-grid .service-card:hover {
   box-shadow: 0 30px 60px rgba(124, 58, 237, 0.15);
 }
-/* ===============================
-   STATIC CLIENT GRID (RESPONSIVE)
-================================== */
-
+/* ================= TRUSTED CLIENTS ================= */
 .trusted-section {
-  padding: 80px 20px;
-  background: linear-gradient(to right, #f8fafc, #eef2f7);
-}
-
-
-.section-title {
+  width: 100%;
+  padding: 60px 20px;
+  background: #f9f9f9;
+  overflow: hidden;
   text-align: center;
-  font-size: 36px;
+}
+
+.trusted-section .section-title {
+  font-size: 32px;
   font-weight: 700;
-  margin-bottom: 60px;
-  color: #111827;
+  margin-bottom: 50px;
+  color: #1e293b;
 }
 
-/* Responsive Grid */
-.clients-grid {
-  display: grid;
-  gap: 20px;
-  max-width: 1400px;
-  margin: auto;
-
-  /* Default: 6 columns */
-  grid-template-columns: repeat(6, 1fr);
+.logo-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Fade effect on edges */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-/* Client Box Style */
+.logo-track {
+  display: flex;
+  width: max-content; /* Critical for continuous scroll */
+  gap: 50px;
+  animation: scroll 60s linear infinite; /* Slower for readability */
+}
+
 .client-card {
-  background: #ffffff;
-  height: 120px;
-
+  flex: 0 0 auto;
+  width: 250px; /* Standardized width */
+  height: 150px; /* Standardized height */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  font-weight: 600;
-  color: #1f2937;
-
-  transition: 0.3s ease;
+  padding: 15px;
 }
 
-.client-card:hover {
-  background: #2563eb;
-  color: white;
-  transform: translateY(-5px);
+.client-card img {
+  max-height: 100px; 
+  max-width: 80%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-/* ======================
-   RESPONSIVE BREAKPOINTS
-====================== */
+.client-card:hover img {
+  transform: scale(1.1);
+}
 
-/* Large screens: keep 6 columns */
-@media (min-width: 1600px) {
-  .clients-grid {
-    grid-template-columns: repeat(7, 1fr);
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
-/* Medium screens: 4 columns */
-@media (max-width: 1200px) {
-  .clients-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Small screens: 3 columns */
-@media (max-width: 900px) {
-  .clients-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Extra small screens: 2 columns */
-@media (max-width: 600px) {
-  .clients-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile screens: 1 column */
-@media (max-width: 400px) {
-  .clients-grid {
-    grid-template-columns: 1fr;
-  }
+/* Pause animation on hover */
+.logo-track:hover {
+  animation-play-state: paused;
 }
 /* =========================
    ABOUT SECTION – CLEAN & BLACK

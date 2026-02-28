@@ -1,129 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!-- Basic Meta -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Event & Outdoor Branding | Nexora Media</title>
 
+ <!-- SEO Meta -->
+  <meta name="description" content="Nexora Media offers premium Event & Outdoor Branding solutions including hoardings, stall branding, exhibition setups, and large-scale promotional displays.">
+  <meta name="keywords" content="Event Branding, Outdoor Advertising, Hoardings, Exhibition Stall Design, Nexora Media">
+  <meta name="author" content="Nexora Media">
+
+<!-- Favicon -->
+
+
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-  body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background: #f8fafc;
-  }
+<!-- Your main CSS -->
+<link rel="stylesheet" href="css/style.css">
 
-  /* ================= SERVICE HERO ================= */
+<!-- Preload (Performance Boost) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<style>
+  html {
+  scroll-behavior: smooth;
+}
+
+/* ================= RESET ================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8fafc;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 25, 76, .2) rgba(0, 25, 76, .05);
+  -webkit-overflow-scrolling: touch; /* ✅ Add here */
+}
+
+/* ================= HEADINGS ================= */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+
+/* ================= SERVICE HERO ================= */
+.service-hero {
+  padding: 150px 20px 100px;
+  text-align: center;
+  background: linear-gradient(135deg, #fdfbff 0%, #f3e8ff 50%, #ffe4e6 100%);
+}
+
+.service-hero h1 {
+  font-size: 46px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.service-hero p {
+  font-size: 18px;
+  max-width: 750px;
+  margin: auto;
+  color: #64748b;
+}
+/* ================= SHOWCASE HEADER ================= */
+.showcase-scroll-section {
+  padding: 80px 20px 40px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.showcase-header {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 17px;
+  color: #64748b;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* ================= HERO ================= */
+.service-hero {
+  padding: 140px 20px 90px;
+}
+
+.service-hero h1 {
+  font-size: 52px;
+  letter-spacing: -0.5px;
+}
+
+.service-hero p {
+  font-size: 19px;
+  line-height: 1.7;
+}
+/* ================= ROLLER SECTION ================= */
+.roller-section {
+  position: relative;
+  width: 100%;
+  padding: 80px 0;
+  overflow: hidden;
+  background: #f9fafb; /* softer background */
+}
+
+/* Container */
+.roller-container {
+  cursor: grab;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+/* Track */
+.roller-track {
+  display: flex;
+  gap: 30px;
+  will-change: transform;
+}
+
+/* Items */
+.roller-item {
+  width: 450px;
+  height: 300px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000; /* prevents white flash */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  transition: transform 0.4s ease;
+}
+
+.roller-item:hover {
+  transform: scale(1.03);
+}
+
+.roller-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* ================= ARROWS ================= */
+.roller-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s ease;
+}
+
+.roller-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  background: #f3f4f6;
+}
+
+.roller-btn.left { left: 25px; }
+.roller-btn.right { right: 25px; }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .roller-item { width: 350px; height: 240px; }
+}
+
+@media (max-width: 768px) {
+  .roller-item { width: 260px; height: 180px; }
+  .roller-btn { width: 42px; height: 42px; font-size: 18px; }
+}
+
+@media (max-width: 480px) {
+  .roller-item { width: 220px; height: 160px; }
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .roller-item {
+    width: 350px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+
   .service-hero {
-    padding: 150px 20px 100px;
-    text-align: center;
-    background: linear-gradient(135deg, #fdfbff, #f3e8ff, #ffe4e6);
+    padding: 110px 20px 70px;
   }
 
   .service-hero h1 {
-    font-size: 46px;
-    font-weight: 800;
-    margin-bottom: 20px;
+    font-size: 36px;
   }
 
   .service-hero p {
-    max-width: 750px;
-    margin: auto;
-    font-size: 18px;
-    color: #64748b;
-  }
-
-  /* ================= WHAT WE OFFER ================= */
-  .offer-section {
-    padding: 100px 20px;
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  .offer-section h2 {
-    text-align: center;
-    font-size: 34px;
-    margin-bottom: 60px;
-  }
-
-  .offer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-  }
-
-  .offer-intro {
-    max-width: 750px;
-    margin: 0 auto 60px;
-    text-align: center;
-    color: #64748b;
     font-size: 16px;
   }
 
+  .section-title {
+    font-size: 26px;
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+  }
+
+  .roller-item {
+    width: 260px;
+    height: 180px;
+  }
+
+  .roller-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .roller-btn.left {
+    left: 10px;
+  }
+
+  .roller-btn.right {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .roller-item {
+    width: 220px;
+    height: 160px;
+  }
+}
+
+/* ================= WHAT WE OFFER ================= */
+
+.offer-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Title */
+.offer-section h2 {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  color: #0f172a;
+  position: relative;
+  display: inline-block;
+}
+/* Purple Line Under Title */
+.offer-section h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 15px auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #6D28D9, #8B1246);
+}
+/* Subtitle */
+.offer-intro {
+  font-size: 18px;
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto 70px;
+  line-height: 1.8;
+}
+
+/* Grid Layout */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.offer-card {
+  background: #ffffff;
+  padding: 45px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.08);
+}
+
+/* Icon */
+.offer-icon {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #6D28D9;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+/* Solid Glow - Same Color Throughout */
+.offer-icon::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: #6D28D9;   /* Same purple everywhere */
+  z-index: -1;
+  opacity: 0.15;
+  transition: 0.3s ease;
+}
+
+.offer-card:hover .offer-icon {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(109, 40, 217, 0.18);
+}
+
+.offer-card:hover .offer-icon::before {
+  opacity: 0.25;  /* Same color, just stronger */
+}
+/* Card Title */
+.offer-card h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #111827;
+  font-weight: 600;
+}
+
+/* Card Text */
+.offer-card p {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .offer-section {
+    padding: 80px 20px;
+  }
+
+  .offer-section h2 {
+    font-size: 32px;
+  }
+
+  .offer-intro {
+    font-size: 16px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .offer-section {
+    padding: 70px 18px;
+  }
+
+  .offer-section h2 {
+    font-size: 26px;
+  }
+
+  .offer-intro {
+    font-size: 15px;
+    margin-bottom: 45px;
+  }
+
   .offer-card {
-    background: #ffffff;
-    padding: 45px 30px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: .3s ease;
+    padding: 30px 22px;
   }
 
-  .offer-card:hover {
-    transform: translateY(-8px);
-  }
-
-  /* ================= PREMIUM OFFER ICON ================= */
   .offer-icon {
-    width: 75px;
-    height: 75px;
-    margin: 0 auto 25px;
-    border-radius: 50%;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: #6D28D9;
-    position: relative;
-    border: 1px solid rgba(0,0,0,0.06);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-    transition: all .3s ease;
-  }
-
-  .offer-icon::before {
-    content: "";
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #6D28D9, #8B1246);
-    z-index: -1;
-    opacity: .12;
-    transition: .3s ease;
-  }
-
-  .offer-card:hover .offer-icon {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 40px rgba(109,40,217,0.18);
-  }
-
-  .offer-card:hover .offer-icon::before {
-    opacity: .2;
-  }
-
-  .offer-card h3 {
-    margin-bottom: 15px;
+    width: 65px;
+    height: 65px;
     font-size: 20px;
   }
+}
 
-  .offer-card p {
-    font-size: 14px;
-    color: #64748b;
-    line-height: 1.6;
+@media (max-width: 480px) {
+  .offer-section h2 {
+    font-size: 22px;
   }
+
+  .offer-intro {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .offer-section h2::after {
+    width: 50px;
+    height: 3px;
+  }
+}
  /* ================= PROCESS SECTION ================= */
   .process-section {
     background: #f1f5f9;
@@ -202,6 +511,7 @@
     font-weight: 600;
   }
 
+
   /* ================= CONTACT SECTION ================= */
   .contact-section {
     max-width: 1100px;
@@ -209,7 +519,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding: 60px 40px;
+    padding: 80px 40px;
   }
 
   .contact-box {
@@ -243,12 +553,11 @@
     font-size: 15px;
     background: #ffffff;
     transition: 0.3s ease;
+    font-family: inherit;
     box-sizing: border-box;
   }
 
-  .contact-box textarea {
-    resize: none;
-  }
+  .contact-box textarea { resize: none; }
 
   .contact-box input:focus,
   .contact-box textarea:focus {
@@ -269,8 +578,6 @@
     color: #ffffff;
     background: linear-gradient(90deg, #6a11cb, #9c0f5f);
     transition: all 0.4s ease;
-    opacity: 0;
-    animation: fadeButton 0.8s ease forwards;
   }
 
   .contact-box button:hover {
@@ -279,21 +586,12 @@
     background: linear-gradient(90deg, #7b1fe0, #b3126f);
   }
 
-  .contact-box button:active {
-    transform: translateY(0);
-  }
-
-  @keyframes fadeButton {
-    to { opacity: 1; }
-  }
-
   .contact-lower-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    margin-top: 30px;
   }
-
+ 
   .contact-info {
     background: linear-gradient(135deg, #f3e8ff, #ffe4e6);
     padding: 35px 25px;
@@ -316,189 +614,101 @@
     margin-top: 4px;
   }
 
-  .info-item h4 {
-    margin-bottom: 5px;
-    font-size: 16px;
-  }
+  .info-item h4 { margin-bottom: 5px; font-size: 16px; }
+  .info-item p { font-size: 14px; color: #666; line-height: 1.6; margin: 0; }
 
-  .info-item p {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  .contact-info .btn-primary {
-    margin-top: 10px;
-    text-align: center;
+  .btn-primary {
     display: inline-block;
-    padding: 12px 20px;
-    background: #25D366;
+    background: #25d366;
     color: white;
+    padding: 12px 20px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s ease;
+    text-align: center;
+    transition: 0.3s;
   }
-  
-  .contact-info .btn-primary:hover {
-    background: #1ebe57;
-    transform: translateY(-2px);
+  .btn-primary:hover {
+    background: #1ebc5a;
+    transform: translateY(-3px);
   }
 
   .map iframe {
     border-radius: 15px;
     width: 100%;
-    min-height: 300px;
+    min-height: 100%;
   }
 
-  .contact-box,
-  .contact-info,
-  .map {
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeUp 0.8s ease forwards;
-  }
+/* ================= FLOATING BUTTON ================= */
+.side-contact {
+  position: fixed;
+  right: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6D28D9, #8B1246);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 13px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  z-index: 999;
+  animation: floatMotion 4s ease-in-out infinite;
+  transition: 0.3s ease;
 
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
+  /* ✅ ADDED */
+  cursor: grab;
+  user-select: none;
+}
 
-  /* ================= MOBILE VIEW ================= */
-  @media (max-width: 768px) {
-    .contact-section {
-      padding: 30px 20px;
-      gap: 30px;
-    }
-    .contact-box {
-      padding: 35px 20px;
-      border-radius: 20px;
-    }
-    .contact-box h2 {
-      font-size: 22px;
-      margin-bottom: 25px;
-    }
-    .contact-box input,
-    .contact-box textarea {
-      padding: 14px;
-      font-size: 14px;
-      margin-bottom: 18px;
-      border-radius: 12px;
-    }
-    .contact-box button {
-      padding: 16px;
-      font-size: 15px;
-    }
-    .contact-lower-grid {
-      grid-template-columns: 1fr;
-      gap: 25px;
-    }
-    .contact-info {
-      padding: 25px 18px;
-      border-radius: 20px;
-    }
-    .map iframe {
-      min-height: 220px;
-    }
-  }
+.side-contact::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6D28D9, #8B1246);
+  opacity: 0.15;
+  z-index: -1;
+  animation: glowRing 3s ease-in-out infinite;
+}
 
-  /* ================= ULTRA PREMIUM FLOATING CIRCLE ================= */
-  .side-contact {
-    position: fixed;
-    right: 35px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #6D28D9, #8B1246);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 14px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-    z-index: 999;
-    animation: floatMotion 4s ease-in-out infinite;
-    transition: 0.3s ease;
-  }
+/* ✅ NEW CLASS (for dragging state) */
+.side-contact.dragging {
+  cursor: grabbing;
+  animation: none; /* stop floating while dragging */
+}
 
-  .side-contact::before {
-    content: "";
-    position: absolute;
-    inset: -12px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #6D28D9, #8B1246);
-    opacity: 0.15;
-    z-index: -1;
-    animation: glowRing 3s ease-in-out infinite;
-  }
+@keyframes floatMotion {
+  0%, 100% { transform: translateY(-50%) translateY(0px); }
+  50% { transform: translateY(-50%) translateY(-10px); }
+}
 
-  @keyframes floatMotion {
-    0%, 100% { transform: translateY(-50%) translateY(0px); }
-    50% { transform: translateY(-50%) translateY(-10px); }
-  }
+@keyframes glowRing {
+  0%, 100% { transform: scale(1); opacity: 0.15; }
+  50% { transform: scale(1.15); opacity: 0.25; }
+}
 
-  @keyframes glowRing {
-    0%, 100% { transform: scale(1); opacity: 0.15; }
-    50% { transform: scale(1.15); opacity: 0.25; }
-  }
-
-  .side-contact:hover {
-    box-shadow: 0 30px 90px rgba(109,40,217,0.4);
-    transform: translateY(-50%) scale(1.05);
-  }
-
-
-
-  @keyframes floatMotion {
-    0% { transform: translateY(-50%) translateY(0px); }
-    50% { transform: translateY(-50%) translateY(-8px); }
-    100% { transform: translateY(-50%) translateY(0px); }
-  }
-
-  @keyframes glowRing {
-    0% { transform: scale(1); opacity: .15; }
-    50% { transform: scale(1.15); opacity: .25; }
-    100% { transform: scale(1); opacity: .15; }
-  }
-
-  .side-contact:active::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(255,255,255,.3);
-    animation: ripple .6s ease-out;
-  }
-
-  @keyframes ripple {
-    0% { transform: scale(0); opacity: .6; }
-    100% { transform: scale(1.8); opacity: 0; }
-  }
-
-  .side-contact:hover {
-    box-shadow: 0 30px 90px rgba(109,40,217,.4);
-    transform: translateY(-50%) scale(1.05);
-  }
-
-  /* ================= FOOTER STYLES ================= */
+.side-contact:hover {
+  box-shadow: 0 30px 90px rgba(109,40,217,0.4);
+  transform: translateY(-50%) scale(1.05);
+}
+  /* ================= FOOTER ================= */
   .footer {
     background: #0b0b0d;
     padding: 80px 20px 30px;
     color: #9ca3af;
-    font-family: 'Poppins', sans-serif;
   }
 
   .footer-container {
     max-width: 1200px;
     margin: auto;
-    width: 100%;
   }
 
   .footer-grid {
@@ -507,121 +717,77 @@
     gap: 50px;
   }
 
-  .footer h3 {
-    font-size: 22px;
-    color: #ffffff;
-    margin-bottom: 15px;
-    margin-top: 0;
-  }
+  .footer h3 { font-size: 22px; color: #ffffff; margin-bottom: 15px; }
+  .footer h4 { font-size: 16px; color: #ffffff; margin-bottom: 18px; }
+  .footer p { font-size: 14px; line-height: 1.7; }
+  
+  .footer ul { list-style: none; padding: 0; margin: 0; }
+  .footer ul li { margin-bottom: 10px; font-size: 14px; }
+  .footer a { color: #9ca3af; text-decoration: none; transition: 0.3s; }
+  .footer a:hover { color: #ffffff; }
 
-  .footer h4 {
-    font-size: 16px;
-    color: #ffffff;
-    margin-bottom: 18px;
-    margin-top: 0;
-  }
-
-  .footer p {
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  .footer a {
-    color: #9ca3af;
-    text-decoration: none;
-    transition: 0.3s ease;
-  }
-
-  .footer a:hover {
-    color: #ffffff;
-  }
-
-  .footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .footer ul li {
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-
-  .footer-bottom {
-    margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid #26262b;
-    text-align: center;
-    font-size: 13px;
-    color: #6b7280;
-  }
-
-  .social-links {
-    display: flex;
-    gap: 12px;
-    margin-top: 15px;
-  }
-
+  .social-links { display: flex; gap: 12px; margin-top: 15px; }
   .social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #1a1a1f;
-    color: #ffffff;
-    font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: #1a1a1f; color: #ffffff; font-size: 16px;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
   }
-
   .social-links a:hover {
     transform: translateY(-5px) scale(1.1);
-    color: #fff;
     box-shadow: 0 8px 25px rgba(0,0,0,0.25);
   }
-
   .social-links a.facebook:hover { background: #3b5998; }
   .social-links a.instagram:hover { background: #E1306C; }
   .social-links a.linkedin:hover { background: #0077B5; }
-  .social-links a.youtube:hover { background: #FF0000; }
 
-  .social-links a::before {
-    content: "";
-    position: absolute;
-    width: 120%;
-    height: 120%;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 0.5s ease;
+  .footer-bottom {
+    margin-top: 60px; padding-top: 20px;
+    border-top: 1px solid #26262b; text-align: center;
+    font-size: 13px; color: #6b7280;
   }
 
-  .social-links a:hover::before {
-    transform: translate(-50%, -50%) scale(1);
-  }
-
+  /* ================= MOBILE VIEW RESPONSIVE ================= */
   @media (max-width: 992px) {
-    .footer-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-    }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .header { padding: 15px 20px; }
+    .nav { display: none; /* Add JS menu toggle if needed */ }
+    
+    .service-hero h1 { font-size: 34px; }
+    
+    .process-steps { flex-direction: column; align-items: center; gap: 15px; }
+    .step { width: 100%; max-width: 450px; text-align: center; }
+
+    .contact-section { padding: 40px 20px; gap: 30px; }
+    .contact-box { padding: 35px 20px; }
+    .contact-lower-grid { grid-template-columns: 1fr; }
+    .map iframe { min-height: 250px; }
+    
+    .side-contact { display: none; } /* Hide floating button on mobile to save space */
   }
 
   @media (max-width: 600px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 30px;
-      text-align: center;
-    }
-    .social-links {
-      justify-content: center;
-    }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .social-links { justify-content: center; }
   }
+
+
+/* ================= GLOBAL FIXES ================= */
+body, html {
+  overflow-x: hidden;
+}
+
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-size: 15px;
+}
 
   /* ================= MOBILE & GENERAL FIXES ================= */
   body, html {
@@ -663,12 +829,61 @@
   </div>
 </header>
 
+<!-- ================= HERO ================= -->
 <section class="service-hero">
   <h1>Event & Outdoor Branding</h1>
   <p>
     Command attention with large-scale outdoor advertising, hoarding networks, 
     and immersive event stage setups tailored for maximum impact and brand visibility.
   </p>
+</section>
+
+<!-- ================= SHOWCASE ================= -->
+<section class="showcase-scroll-section">
+  <div class="showcase-header">
+    <h2 class="section-title">Event & Outdoor Showcases</h2>
+    <p class="section-subtitle">Project visuals & gallery of our recent work</p>
+  </div>
+
+  <section class="roller-section">
+
+      <!-- Arrow Buttons -->
+    <button class="roller-btn left" id="prevBtn">&#10094;</button>
+    <button class="roller-btn right" id="nextBtn">&#10095;</button>
+
+
+    <div class="roller-container" id="rollerContainer">
+      <div class="roller-track" id="rollerTrack">
+        <!-- Replace with actual images from your folder -->
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0013.jpg" alt="Event 1"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0014.jpg" alt="Event 2"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0016.jpg" alt="Event 3"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0017.jpg" alt="Event 4"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0018.jpg" alt="Event 5"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0019.jpg" alt="Event 6"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0020.jpg" alt="Event 7"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0021.jpg" alt="Event 8"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0024.jpg" alt="Event 9"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0025 - Copy.jpg" alt="Event 10"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0026 - Copy.jpg" alt="Event 11"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0067 - Copy.jpg" alt="Event 12"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0068.jpg" alt="Event 13"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0069 - Copy.jpg" alt="Event 14"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0070.jpg" alt="Event 15"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0071 - Copy.jpg" alt="Event 16"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0072.jpg" alt="Event 17"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0073.jpg" alt="Event 18"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0074.jpg" alt="Event 19"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0075.jpg" alt="Event 20"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0076.jpg" alt="Event 21"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0077.jpg" alt="Event 22"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0079.jpg" alt="Event 23"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0080.jpg" alt="Event 24"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0081.jpg" alt="Event 25"></div>
+        <div class="roller-item"><img src="images/showcase/event-branding/IMG-20260226-WA0082.jpg" alt="Event 26"></div>
+      </div>
+    </div>
+  </section>
 </section>
 
 <section class="offer-section">
@@ -726,12 +941,8 @@
     </div>
 
   </div>
-
-  <div class="future-media">
-    Event & Outdoor Showcases 
-    <br><span style="font-weight: 400; font-size: 14px;">(Project visuals & gallery will appear here)</span>
-  </div>
 </section>
+
 
 <section class="process-section">
   <div class="process-inner">
@@ -748,6 +959,9 @@
 
 <a href="#contact" class="side-contact">Get In Touch</a>
 
+
+
+<!-- ================= CONTACT SECTION ================= -->
 <section id="contact" class="contact-section">
 
   <div class="contact-box">
@@ -761,8 +975,9 @@
     </form>
   </div>
 
+  <!-- CONTACT LOWER GRID -->
   <div class="contact-lower-grid">
-    
+
     <div class="contact-info">
       <div class="info-item">
         <i class="fas fa-map-marker-alt"></i>
@@ -788,33 +1003,36 @@
         </div>
       </div>
 
-      <a href="https://wa.me/918446243639" target="_blank" class="btn-primary full-btn" style="margin-top:15px;">
+      <a href="https://wa.me/918446243639" target="_blank" class="btn-primary">
         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
       </a>
     </div>
 
     <div class="map">
       <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121059.04711153835!2d73.7805654157585!3d18.524603553427306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-        width="100%" 
-        height="300" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
+        src="https://www.google.com/maps?q=Pune,Maharashtra&output=embed"
+        allowfullscreen
+        loading="lazy">
       </iframe>
     </div>
 
   </div>
+
 </section>
 
+
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-container">
+
     <div class="footer-grid">
 
       <div class="footer-about">
         <h3>Nexora Media</h3>
-        <p>Delivering professional branding, printing, and advertising solutions with precision, innovation, and creativity.</p>
+        <p>
+          Delivering professional branding, printing, and advertising solutions 
+          with precision, innovation, and creativity.
+        </p>
       </div>
 
       <div class="footer-links">
@@ -822,8 +1040,8 @@
         <ul>
           <li><a href="design-print.html">Printing Solutions</a></li>
           <li><a href="led-advertising.html">LED Screen Advertising</a></li>
-          <li><a href="political-branding.html">Political Branding</a></li>
-          <li><a href="event-branding.html">Event & Outdoor</a></li>
+          <li><a href="digital-solutions.html">Digital Solutions</a></li>
+          <li><a href="seo-optimization.html">SEO Optimization</a></li>
         </ul>
       </div>
 
@@ -841,31 +1059,197 @@
         <h4>Contact</h4>
         <p>Phone: <a href="tel:+918446243639">+91 8446243639</a></p>
         <p>Email: <a href="mailto:ovsmedia25@gmail.com">ovsmedia25@gmail.com</a></p>
+
         <div class="social-links">
-          <a href="#" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/nexoramedia25" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/112027444/" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="facebook" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/nexoramedia25" class="instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/112027444/" class="linkedin" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
         </div>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-      © 2026 Nexora Media. All Rights Reserved.
+      © 2026 Nexora Media | Powered by OVS Group Pune. All Rights Reserved.
     </div>
+
   </div>
 </footer>
-
 <script src="js/script.js"></script>
+
 <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ================= MENU TOGGLE ================= */
   const menuToggle = document.getElementById('menu-toggle');
   const nav = document.getElementById('nav');
 
-  menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-</script>
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  }
 
-</body>
-</html>
+  /* ================= INFINITE ROLLER ================= */
+  const slider = document.getElementById('rollerContainer');
+  const track = document.getElementById('rollerTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  if (slider && track) {
+
+    track.innerHTML += track.innerHTML;
+
+    let isDraggingSlider = false;
+    let isHovered = false;
+    let startX = 0;
+    let currentX = 0;
+    let targetX = 0;
+
+    const autoSpeed = 0.4;
+    const lerp = 0.07;
+
+    function animate() {
+
+      if (!isDraggingSlider && !isHovered) {
+        targetX -= autoSpeed;
+      }
+
+      const halfWidth = track.scrollWidth / 2;
+
+      if (targetX <= -halfWidth) {
+        targetX += halfWidth;
+        currentX += halfWidth;
+      }
+
+      if (targetX >= 0) {
+        targetX -= halfWidth;
+        currentX -= halfWidth;
+      }
+
+      currentX += (targetX - currentX) * lerp;
+      track.style.transform = `translate3d(${currentX}px, 0, 0)`;
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    function dragStart(e) {
+      isDraggingSlider = true;
+      startX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+      slider.style.cursor = "grabbing";
+    }
+
+    function dragMove(e) {
+      if (!isDraggingSlider) return;
+
+      const x = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+      const walk = x - startX;
+
+      targetX += walk * 0.9;
+      startX = x;
+    }
+
+    function dragEnd() {
+      isDraggingSlider = false;
+      slider.style.cursor = "grab";
+    }
+
+    slider.addEventListener("mousedown", dragStart);
+    window.addEventListener("mousemove", dragMove);
+    window.addEventListener("mouseup", dragEnd);
+
+    slider.addEventListener("touchstart", dragStart, { passive: true });
+    window.addEventListener("touchmove", dragMove, { passive: true });
+    window.addEventListener("touchend", dragEnd);
+
+    slider.addEventListener("mouseenter", () => isHovered = true);
+    slider.addEventListener("mouseleave", () => {
+      isHovered = false;
+      isDraggingSlider = false;
+      slider.style.cursor = "grab";
+    });
+
+    function getMoveAmount() {
+      const item = track.children[0];
+      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+      return item.offsetWidth + gap;
+    }
+
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener("click", () => {
+        targetX += getMoveAmount();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        targetX -= getMoveAmount();
+      });
+    }
+  }
+
+  /* ================= FLOATING BUTTON DRAG (SMOOTH + RETURN) ================= */
+
+  const button = document.querySelector(".side-contact");
+
+  if (button) {
+
+    let isDraggingButton = false;
+    let offsetX = 0;
+    let offsetY = 0;
+    let returnTimeout;
+
+    const originalRight = "35px";
+    const originalTop = "50%";
+    const originalTransform = "translateY(-50%)";
+
+    button.addEventListener("mousedown", (e) => {
+      isDraggingButton = true;
+      button.classList.add("dragging");
+
+      const rect = button.getBoundingClientRect();
+      offsetX = e.clientX - rect.left;
+      offsetY = e.clientY - rect.top;
+
+      button.style.transition = "none";
+      clearTimeout(returnTimeout);
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!isDraggingButton) return;
+
+      const x = e.clientX - offsetX;
+      const y = e.clientY - offsetY;
+
+      button.style.left = x + "px";
+      button.style.top = y + "px";
+      button.style.right = "auto";
+      button.style.transform = "none";
+    });
+
+    document.addEventListener("mouseup", () => {
+      if (!isDraggingButton) return;
+
+      isDraggingButton = false;
+      button.classList.remove("dragging");
+
+      button.style.transition = "all 0.4s ease";
+
+      returnTimeout = setTimeout(() => {
+        button.style.transition = "all 0.8s cubic-bezier(0.22, 1, 0.36, 1)";
+        button.style.left = "auto";
+        button.style.right = originalRight;
+        button.style.top = originalTop;
+        button.style.transform = originalTransform;
+      }, 10000);
+    });
+  }
+
+});
+</script>

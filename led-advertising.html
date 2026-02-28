@@ -1,39 +1,264 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LED Advertising | Nexora Media</title>
 
+ <!-- Basic Meta -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event & Outdoor Branding | Nexora Media</title>
+
+ <!-- SEO Meta -->
+  <meta name="description" content="Nexora Media offers premium Event & Outdoor Branding solutions including hoardings, stall branding, exhibition setups, and large-scale promotional displays.">
+  <meta name="keywords" content="Event Branding, Outdoor Advertising, Hoardings, Exhibition Stall Design, Nexora Media">
+  <meta name="author" content="Nexora Media">
+
+<!-- Favicon -->
+
+
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<!-- Your main CSS -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Preload (Performance Boost) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
 <style>
-  body{
-  font-family:'Poppins',sans-serif;
-  margin:0;
-  background:#f8fafc;
+  html {
+  scroll-behavior: smooth;
 }
 
-/* ================= SERVICE HERO ================= */
-.service-hero{
-  padding:150px 20px 100px;
-  text-align:center;
-  background:linear-gradient(135deg,#fdfbff,#f3e8ff,#ffe4e6);
+/* ================= RESET ================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8fafc;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 25, 76, .2) rgba(0, 25, 76, .05);
+  -webkit-overflow-scrolling: touch; /* ✅ Add here */
 }
 
-.service-hero h1{
-  font-size:46px;
-  font-weight:800;
-  margin-bottom:20px;
+/* ================= HEADINGS ================= */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+/* ================= SERVUCE HERO  ================= */
+.service-hero {
+  padding: 140px 20px 90px; /* smaller bottom padding for better balance */
+  text-align: center;
+  background: linear-gradient(135deg, #fdfbff 0%, #f3e8ff 50%, #ffe4e6 100%);
+}
+.service-hero h1 {
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.service-hero p {
+  font-size: 19px;
+  line-height: 1.7;
+  max-width: 750px;
+  margin: auto;
+  color: #64748b;
 }
 
-.service-hero p{
-  max-width:750px;
-  margin:auto;
-  font-size:18px;
-  color:#64748b;
+/* ================= SHOWCASE HEADER ================= */
+.showcase-scroll-section {
+  padding: 80px 20px 40px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.showcase-header {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 17px;
+  color: #64748b;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* ================= HERO ================= */
+.service-hero {
+  padding: 140px 20px 90px;
+}
+
+.service-hero h1 {
+  font-size: 52px;
+  letter-spacing: -0.5px;
+}
+
+.service-hero p {
+  font-size: 19px;
+  line-height: 1.7;
+}
+/* ================= ROLLER SECTION ================= */
+.roller-section {
+  position: relative;
+  width: 100%;
+  padding: 80px 0;
+  overflow: hidden;
+  background: #f9fafb; /* softer background */
+}
+
+/* Container */
+.roller-container {
+  cursor: grab;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+/* Track */
+.roller-track {
+  display: flex;
+  gap: 30px;
+  will-change: transform;
+}
+
+/* Items */
+.roller-item {
+  width: 450px;
+  height: 300px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000; /* prevents white flash */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  transition: transform 0.4s ease;
+}
+
+.roller-item:hover {
+  transform: scale(1.03);
+}
+
+.roller-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* ================= ARROWS ================= */
+.roller-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s ease;
+}
+
+.roller-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  background: #f3f4f6;
+}
+
+.roller-btn.left { left: 25px; }
+.roller-btn.right { right: 25px; }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .roller-item { width: 350px; height: 240px; }
+}
+
+@media (max-width: 768px) {
+  .roller-item { width: 260px; height: 180px; }
+  .roller-btn { width: 42px; height: 42px; font-size: 18px; }
+}
+
+@media (max-width: 480px) {
+  .roller-item { width: 220px; height: 160px; }
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .roller-item {
+    width: 350px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .service-hero {
+    padding: 110px 20px 70px;
+  }
+
+  .service-hero h1 {
+    font-size: 36px;
+  }
+
+  .service-hero p {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+  }
+
+  .roller-item {
+    width: 260px;
+    height: 180px;
+  }
+
+  .roller-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .roller-btn.left {
+    left: 10px;
+  }
+
+  .roller-btn.right {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .roller-item {
+    width: 220px;
+    height: 160px;
+  }
 }
 
 /* ================= WHAT WE OFFER ================= */
@@ -53,6 +278,16 @@
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
+}
+/* Purple Line Under Title Added Here */
+.offer-section h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 15px auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #6D28D9, #8B1246);
 }
 
 .offer-intro{
@@ -126,74 +361,98 @@
   color:#64748b;
   line-height:1.6;
 }
+/* ================= PROCESS SECTION (UPGRADED) ================= */
+.process-section {
+  background: #f1f5f9;
+  padding: 100px 20px;
+}
 
- /* ================= PROCESS SECTION ================= */
-  .process-section {
-    background: #f1f5f9;
-    padding: 100px 20px;
-  }
+.process-inner {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
 
-  .process-inner {
-    max-width: 1000px;
-    margin: auto;
-    text-align: center;
-  }
+.process-inner h2 {
+  font-size: 38px; /* Increased to match Offer Section */
+  font-weight: 800;
+  margin-bottom: 20px; /* Reduced to accommodate underline spacing */
+  color: #1e293b;
+  position: relative;
+  display: inline-block;
+}
 
-  .process-inner h2 {
-    font-size: 32px;
-    margin-bottom: 50px;
-    color: #1e293b;
-  }
+/* Added Purple Underline to Process Title */
+.process-inner h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 15px auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #6D28D9, #8B1246);
+}
 
-  .process-steps {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
+.process-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px; /* Spacing between underline and steps */
+}
 
-  .step {
-    background: white;
-    padding: 20px 30px;
-    border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    font-weight: 600;
-    font-size: 15px;
-    color: #334155;
-    transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
-  }
-  
-  .step:hover {
-    transform: translateY(-5px);
-    border-bottom: 3px solid #6D28D9;
-    box-shadow: 0 15px 35px rgba(109,40,217,0.1);
-  }
+.step {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  font-weight: 600;
+  font-size: 15px;
+  color: #334155;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.step:hover {
+  transform: translateY(-8px); /* Slightly deeper lift */
+  border-bottom: 3px solid #6D28D9;
+  box-shadow: 0 15px 35px rgba(109,40,217,0.12);
+  color: #1e293b;
+}
 
 /* ================= MOBILE VIEW ================= */
 @media (max-width: 768px) {
   .process-section {
-    padding: 60px 15px; /* Reduced padding for smaller screens */
+    padding: 60px 15px;
   }
 
   .process-inner h2 {
     font-size: 28px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+  }
+
+  /* Responsive Underline */
+  .process-inner h2::after {
+    width: 50px;
+    height: 3px;
+    margin-top: 10px;
   }
 
   .process-steps {
-    flex-direction: column; /* Stack steps vertically */
+    flex-direction: column;
     align-items: center;
-    gap: 15px; /* Tighter gap for mobile flow */
+    gap: 15px;
+    margin-top: 35px;
   }
 
   .step {
-    width: 100%; /* Full width cards */
-    max-width: 450px; /* Prevents cards from getting too wide on tablets */
-    padding: 18px 25px; /* Slightly compact padding */
+    width: 100%;
+    max-width: 450px;
+    padding: 18px 25px;
     text-align: center;
   }
 }
+
 /* ================= FUTURE MEDIA ================= */
 .future-media{
   margin-top:60px;
@@ -204,550 +463,296 @@
   color:#64748b;
   font-weight:600;
 }
-/* =========================
-   CONTACT SECTION – DESKTOP & MOBILE
-========================= */
-
-/* Container */
-.contact-section {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 60px 40px; /* more left-right space */
-}
-
-/* ================= CONTACT FORM ================= */
-.contact-box {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(15px);
-  padding: 60px 50px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-  transition: 0.3s ease;
-}
-
-.contact-box:hover {
-  transform: translateY(-5px);
-}
-
-/* Heading spacing */
-.contact-box h2 {
-  margin-bottom: 35px;
-  font-size: 30px;
-  font-weight: 600;
-  text-align: center;
-}
-
-/* Inputs */
-.contact-box input,
-.contact-box textarea {
-  width: 100%;
-  padding: 16px;
-  margin-bottom: 22px;
-  border-radius: 14px;
-  border: 1px solid #ddd;
-  font-size: 15px;
-  background: #ffffff;
-  transition: 0.3s ease;
-}
-
-.contact-box textarea {
-  resize: none;
-}
-
-.contact-box input:focus,
-.contact-box textarea:focus {
-  outline: none;
-  border-color: #6d28d9;
-  box-shadow: 0 0 0 4px rgba(109,40,217,0.12);
-  transform: translateY(-2px);
-}
-
-/* ================= GRADIENT SUBMIT BUTTON ================= */
-.contact-box button {
-  width: 100%;
-  padding: 18px;
-  font-size: 17px;
-  font-weight: 600;
-  border-radius: 60px; /* pill shape */
-  border: none;
-  cursor: pointer;
-  color: #ffffff;
-
-  /* Gradient like screenshot */
-  background: linear-gradient(90deg, #6a11cb, #9c0f5f);
-
-  transition: all 0.4s ease;
-
-  /* Fade animation on load */
-  opacity: 0;
-  animation: fadeButton 0.8s ease forwards;
-}
-
-/* Hover Effect */
-.contact-box button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(156, 15, 95, 0.35);
-  background: linear-gradient(90deg, #7b1fe0, #b3126f);
-}
-
-/* Click Effect */
-.contact-box button:active {
-  transform: translateY(0);
-}
-
-/* Fade Animation */
-@keyframes fadeButton {
-  to {
-    opacity: 1;
-  }
-}
-/* ================= LOWER GRID ================= */
-.contact-lower-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 30px;
-}
-
-/* Contact Info Card */
-.contact-info {
-  background: linear-gradient(135deg, #f3e8ff, #ffe4e6);
-  padding: 35px 25px;
-  border-radius: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
-
-.info-item {
-  display: flex;
-  gap: 15px;
-  align-items: flex-start;
-}
-
-.info-item i {
-  font-size: 20px;
-  color: #6d28d9;
-  margin-top: 4px;
-}
-
-.info-item h4 {
-  margin-bottom: 5px;
-  font-size: 16px;
-}
-
-.info-item p {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.6;
-}
-
-.contact-info .btn-primary {
-  margin-top: 10px;
-  text-align: center;
-}
-
-/* Map */
-.map iframe {
-  border-radius: 15px;
-  width: 100%;
-  min-height: 300px;
-}
-
-/* Animation */
-.contact-box,
-.contact-info,
-.map {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .contact-lower-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .map iframe {
-    min-height: 220px;
-  }
-}
-
-@media (max-width: 600px) {
+  /* ================= CONTACT SECTION ================= */
   .contact-section {
-    padding: 30px 20px;
-  }
-
-  .contact-box,
-  .contact-info {
-    padding: 30px 20px;
-  }
-}
-/* ================= MOBILE VIEW ================= */
-@media (max-width: 768px) {
-
-  /* Section spacing */
-  .contact-section {
-    padding: 30px 20px;
-    gap: 30px;
-  }
-
-  /* Contact Form */
-  .contact-box {
-    padding: 35px 20px;
-    border-radius: 20px;
-  }
-
-  .contact-box h2 {
-    font-size: 22px;
-    margin-bottom: 25px;
-    text-align: center;
-  }
-
-  /* Inputs */
-  .contact-box input,
-  .contact-box textarea {
-    padding: 14px;
-    font-size: 14px;
-    margin-bottom: 18px;
-    border-radius: 12px;
-  }
-
-  /* Submit Button */
-  .contact-box button {
-    padding: 16px;
-    font-size: 15px;
-    border-radius: 50px;
-  }
-
-  /* Lower Grid Stack */
-  .contact-lower-grid {
-    grid-template-columns: 1fr;  /* stack vertically */
-    gap: 25px;
-  }
-
-  /* Contact Info Card */
-  .contact-info {
-    padding: 25px 18px;
-    border-radius: 20px;
-  }
-
-  .info-item {
-    gap: 12px;
-  }
-
-  .info-item i {
-    font-size: 18px;
-  }
-
-  .info-item h4 {
-    font-size: 15px;
-  }
-
-  .info-item p {
-    font-size: 13px;
-  }
-
-  /* Map */
-  .map iframe {
-    min-height: 220px;
-    border-radius: 15px;
-  }
-
-}
-
-  /* ================= ULTRA PREMIUM FLOATING CIRCLE ================= */
-  .side-contact {
-    position: fixed;
-    right: 35px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #6D28D9, #8B1246);
+    max-width: 1100px;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 14px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-    z-index: 999;
-    animation: floatMotion 4s ease-in-out infinite;
+    gap: 40px;
+    padding: 80px 40px;
+  }
+
+  .contact-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 60px 50px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
     transition: 0.3s ease;
   }
 
-  .side-contact::before {
-    content: "";
-    position: absolute;
-    inset: -12px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #6D28D9, #8B1246);
-    opacity: 0.15;
-    z-index: -1;
-    animation: glowRing 3s ease-in-out infinite;
+  .contact-box:hover {
+    transform: translateY(-5px);
   }
 
-  @keyframes floatMotion {
-    0%, 100% { transform: translateY(-50%) translateY(0px); }
-    50% { transform: translateY(-50%) translateY(-10px); }
+  .contact-box h2 {
+    margin-bottom: 35px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
   }
 
-  @keyframes glowRing {
-    0%, 100% { transform: scale(1); opacity: 0.15; }
-    50% { transform: scale(1.15); opacity: 0.25; }
+  .contact-box input,
+  .contact-box textarea {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    background: #ffffff;
+    transition: 0.3s ease;
+    font-family: inherit;
+    box-sizing: border-box;
   }
 
-  .side-contact:hover {
-    box-shadow: 0 30px 90px rgba(109,40,217,0.4);
-    transform: translateY(-50%) scale(1.05);
+  .contact-box textarea { resize: none; }
+
+  .contact-box input:focus,
+  .contact-box textarea:focus {
+    outline: none;
+    border-color: #6d28d9;
+    box-shadow: 0 0 0 4px rgba(109,40,217,0.12);
+    transform: translateY(-2px);
   }
 
-
-
-/* Floating Motion */
-@keyframes floatMotion{
-  0%{
-    transform:translateY(-50%) translateY(0px);
+  .contact-box button {
+    width: 100%;
+    padding: 18px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    background: linear-gradient(90deg, #6a11cb, #9c0f5f);
+    transition: all 0.4s ease;
   }
-  50%{
-    transform:translateY(-50%) translateY(-8px);
+
+  .contact-box button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(156, 15, 95, 0.35);
+    background: linear-gradient(90deg, #7b1fe0, #b3126f);
   }
-  100%{
-    transform:translateY(-50%) translateY(0px);
-  }
-}
 
-/* Glowing Pulse */
-@keyframes glowRing{
-  0%{
-    transform:scale(1);
-    opacity:.15;
-  }
-  50%{
-    transform:scale(1.15);
-    opacity:.25;
-  }
-  100%{
-    transform:scale(1);
-    opacity:.15;
-  }
-}
-
-/* Click Ripple Effect */
-.side-contact:active::after{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  background:rgba(255,255,255,.3);
-  animation:ripple .6s ease-out;
-}
-
-@keyframes ripple{
-  0%{
-    transform:scale(0);
-    opacity:.6;
-  }
-  100%{
-    transform:scale(1.8);
-    opacity:0;
-  }
-}
-
-/* Hover Effect */
-.side-contact:hover{
-  box-shadow:0 30px 90px rgba(109,40,217,.4);
-  transform:translateY(-50%) scale(1.05);
-
-}
-/* =========================
-   FOOTER STYLES
-========================= */
-.footer {
-  background: #0b0b0d;
-  padding: 80px 20px 30px;
-  color: #9ca3af;
-  font-family: 'Poppins', sans-serif;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: auto;
-  width: 100%;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 50px;
-}
-
-.footer h3 {
-  font-size: 22px;
-  color: #ffffff;
-  margin-bottom: 15px;
-}
-
-.footer h4 {
-  font-size: 16px;
-  color: #ffffff;
-  margin-bottom: 18px;
-}
-
-.footer p {
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.footer a {
-  color: #9ca3af;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.footer a:hover {
-  color: #ffffff;
-}
-
-.footer ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer ul li {
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-.footer-bottom {
-  margin-top: 60px;
-  padding-top: 20px;
-  border-top: 1px solid #26262b;
-  text-align: center;
-  font-size: 13px;
-  color: #6b7280;
-}
-
-/* Social Icons */
-.social-links {
-  display: flex;
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #1a1a1f;
-  color: #ffffff;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.social-links a:hover {
-  transform: translateY(-5px) scale(1.1);
-  color: #fff;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-}
-
-/* Brand Colors on Hover */
-.social-links a.facebook:hover { background: #3b5998; }
-.social-links a.instagram:hover { background: #E1306C; }
-.social-links a.linkedin:hover { background: #0077B5; }
-.social-links a.youtube:hover { background: #FF0000; }
-
-/* Ripple Effect */
-.social-links a::before {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.5s ease;
-}
-
-.social-links a:hover::before {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-/* =========================
-   RESPONSIVE FOOTER
-========================= */
-
-/* Grid adjusts for tablets */
-@media (max-width: 992px) {
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .contact-lower-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
+ 
+  .contact-info {
+    background: linear-gradient(135deg, #f3e8ff, #ffe4e6);
+    padding: 35px 25px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  }
+
+  .info-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .info-item i {
+    font-size: 20px;
+    color: #6d28d9;
+    margin-top: 4px;
+  }
+
+  .info-item h4 { margin-bottom: 5px; font-size: 16px; }
+  .info-item p { font-size: 14px; color: #666; line-height: 1.6; margin: 0; }
+
+  .btn-primary {
+    display: inline-block;
+    background: #25d366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .btn-primary:hover {
+    background: #1ebc5a;
+    transform: translateY(-3px);
+  }
+
+  .map iframe {
+    border-radius: 15px;
+    width: 100%;
+    min-height: 100%;
+  }
+
+/* ================= FLOATING BUTTON ================= */
+.side-contact {
+  position: fixed;
+  right: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6D28D9, #8B1246);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 13px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  z-index: 999;
+  animation: floatMotion 4s ease-in-out infinite;
+  transition: 0.3s ease;
+
+  /* ✅ ADDED */
+  cursor: grab;
+  user-select: none;
 }
 
-/* Mobile view */
-@media (max-width: 600px) {
+.side-contact::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6D28D9, #8B1246);
+  opacity: 0.15;
+  z-index: -1;
+  animation: glowRing 3s ease-in-out infinite;
+}
+
+/* ✅ NEW CLASS (for dragging state) */
+.side-contact.dragging {
+  cursor: grabbing;
+  animation: none; /* stop floating while dragging */
+}
+
+@keyframes floatMotion {
+  0%, 100% { transform: translateY(-50%) translateY(0px); }
+  50% { transform: translateY(-50%) translateY(-10px); }
+}
+
+@keyframes glowRing {
+  0%, 100% { transform: scale(1); opacity: 0.15; }
+  50% { transform: scale(1.15); opacity: 0.25; }
+}
+
+.side-contact:hover {
+  box-shadow: 0 30px 90px rgba(109,40,217,0.4);
+  transform: translateY(-50%) scale(1.05);
+}
+  /* ================= FOOTER ================= */
+  .footer {
+    background: #0b0b0d;
+    padding: 80px 20px 30px;
+    color: #9ca3af;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
   }
 
-  .social-links {
-    justify-content: center;
+  .footer h3 { font-size: 22px; color: #ffffff; margin-bottom: 15px; }
+  .footer h4 { font-size: 16px; color: #ffffff; margin-bottom: 18px; }
+  .footer p { font-size: 14px; line-height: 1.7; }
+  
+  .footer ul { list-style: none; padding: 0; margin: 0; }
+  .footer ul li { margin-bottom: 10px; font-size: 14px; }
+  .footer a { color: #9ca3af; text-decoration: none; transition: 0.3s; }
+  .footer a:hover { color: #ffffff; }
+
+  .social-links { display: flex; gap: 12px; margin-top: 15px; }
+  .social-links a {
+    display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: #1a1a1f; color: #ffffff; font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  .social-links a:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  }
+  .social-links a.facebook:hover { background: #3b5998; }
+  .social-links a.instagram:hover { background: #E1306C; }
+  .social-links a.linkedin:hover { background: #0077B5; }
+
+  .footer-bottom {
+    margin-top: 60px; padding-top: 20px;
+    border-top: 1px solid #26262b; text-align: center;
+    font-size: 13px; color: #6b7280;
   }
 
-  .footer h3, .footer h4 {
-    text-align: center;
+  /* ================= MOBILE VIEW RESPONSIVE ================= */
+  @media (max-width: 992px) {
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
   }
-}
 
-/* =========================
-   MOBILE & GENERAL FIXES
-========================= */
+  @media (max-width: 768px) {
+    .header { padding: 15px 20px; }
+    .nav { display: none; /* Add JS menu toggle if needed */ }
+    
+    .service-hero h1 { font-size: 34px; }
+    
+    .process-steps { flex-direction: column; align-items: center; gap: 15px; }
+    .step { width: 100%; max-width: 450px; text-align: center; }
 
-/* Prevent horizontal scroll */
+    .contact-section { padding: 40px 20px; gap: 30px; }
+    .contact-box { padding: 35px 20px; }
+    .contact-lower-grid { grid-template-columns: 1fr; }
+    .map iframe { min-height: 250px; }
+    
+    .side-contact { display: none; } /* Hide floating button on mobile to save space */
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .social-links { justify-content: center; }
+  }
+
+
+/* ================= GLOBAL FIXES ================= */
 body, html {
   overflow-x: hidden;
 }
 
-/* Make images, iframes, videos responsive */
 img, iframe, video {
   max-width: 100%;
   height: auto;
 }
 
-/* Base mobile font size */
 body {
   font-size: 15px;
 }
+
+  /* ================= MOBILE & GENERAL FIXES ================= */
+  body, html {
+    overflow-x: hidden;
+  }
+
+  img, iframe, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  body {
+    font-size: 15px;
+  }
 </style>
 </head>
 <body>
@@ -781,7 +786,58 @@ body {
     High-Impact LED Displays for Political and Corporate Campaigns. Engage your audience with dynamic, high-resolution visual experiences that command attention across cityscapes and event venues.
   </p>
 </section>
+<!-- ================= SHOWCASE ================= -->
+<section class="showcase-scroll-section">
+  <div class="showcase-header">
+    <h2 class="section-title">LED Screen Showcases</h2>
+    <p class="section-subtitle">Project visuals & gallery of our recent work</p>
+  </div>
 
+  <section class="roller-section">
+
+    <!-- Arrow Buttons -->
+    <button class="roller-btn left" id="prevBtn">&#10094;</button>
+    <button class="roller-btn right" id="nextBtn">&#10095;</button>
+
+    <div class="roller-container" id="rollerContainer">
+      <div class="roller-track" id="rollerTrack">
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0029.jpg" alt="LED 1"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0030.jpg" alt="LED 2"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0032.jpg" alt="LED 3"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0033.jpg" alt="LED 4"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0034.jpg" alt="LED 5"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0035.jpg" alt="LED 6"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0036.jpg" alt="LED 7"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0037.jpg" alt="LED 8"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0038.jpg" alt="LED 9"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0039.jpg" alt="LED 10"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0040.jpg" alt="LED 11"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0041.jpg" alt="LED 12"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0043.jpg" alt="LED 13"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0044.jpg" alt="LED 14"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0046.jpg" alt="LED 15"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0047.jpg" alt="LED 16"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0058.jpg" alt="LED 17"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0059.jpg" alt="LED 18"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0066.jpg" alt="LED 19"></div>
+        <div class="roller-item"><img src="images/showcase/LedScreen-Advertsing/IMG-20260226-WA0088.jpg" alt="LED 20"></div>
+        <div class="roller-item">
+
+<div class="roller-item">
+    <video autoplay muted loop playsinline class="roller-video">
+        <source src="images/showcase/LedScreen-Advertsing/VID-20260226-WA0085.mp4" type="video/mp4">
+    </video>
+</div>
+<div class="roller-item">
+    <video autoplay muted loop playsinline class="roller-video">
+        <source src="images/showcase/LedScreen-Advertsing/VID-20260226-WA0086.mp4" type="video/mp4">
+    </video>
+</div>
+      </div>
+    </div>
+
+  </section>
+</section>
 <section class="offer-section">
   <h2>What Exactly We Offer</h2>
 
@@ -832,12 +888,8 @@ body {
     </div>
 
   </div>
-
-  <div class="future-media">
-    LED Video & Photo Showcase Area  
-    <br><small>(Upload your campaign visuals, videos, and photos here)</small>
-  </div>
 </section>
+  
 
 <section class="process-section">
   <div class="process-inner">
@@ -916,64 +968,236 @@ body {
 </section>
 
 
+
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-container">
+
     <div class="footer-grid">
 
       <div class="footer-about">
         <h3>Nexora Media</h3>
-        <p>Delivering professional branding, printing, and advertising solutions with precision, innovation, and creativity.</p>
+        <p>
+          Delivering professional branding, printing, and advertising solutions 
+          with precision, innovation, and creativity.
+        </p>
       </div>
 
       <div class="footer-links">
         <h4>Services</h4>
         <ul>
-          <li><a href="/design-print.html">Printing Solutions</a></li>
+          <li><a href="design-print.html">Printing Solutions</a></li>
           <li><a href="led-advertising.html">LED Screen Advertising</a></li>
-          <li><a href="political-branding.html">Political Branding</a></li>
-          <li><a href="corporate-printing.html">Corporate Campaigns</a></li>
+          <li><a href="digital-solutions.html">Digital Solutions</a></li>
+          <li><a href="seo-optimization.html">SEO Optimization</a></li>
         </ul>
       </div>
 
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="/index.html">Services</a></li>
-          <li><a href="/work.html">Our Work</a></li>
-          <li><a href="/index.html#about">About Us</a></li>
-          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="work.html">Our Work</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-contact">
         <h4>Contact</h4>
-        <p>Phone: <a href="tel:+918007392979">+91 8007392979</a></p>
+        <p>Phone: <a href="tel:+918446243639">+91 8446243639</a></p>
         <p>Email: <a href="mailto:ovsmedia25@gmail.com">ovsmedia25@gmail.com</a></p>
+
         <div class="social-links">
-          <a href="#" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/nexoramedia25" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/112027444/" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="facebook" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/nexoramedia25" class="instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/112027444/" class="linkedin" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
         </div>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-      © 2026 Nexora Media. All Rights Reserved.
+      © 2026 Nexora Media | Powered by OVS Group Pune. All Rights Reserved.
     </div>
+
   </div>
 </footer>
-
 <script src="js/script.js"></script>
-<script>
-const menuToggle = document.getElementById('menu-toggle');
-const nav = document.getElementById('nav');
 
-menuToggle.addEventListener('click', () => {
-  nav.classList.toggle('active');
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ================= MENU TOGGLE ================= */
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav');
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  }
+
+  /* ================= INFINITE ROLLER ================= */
+  const slider = document.getElementById('rollerContainer');
+  const track = document.getElementById('rollerTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  if (slider && track) {
+
+    track.innerHTML += track.innerHTML;
+
+    let isDraggingSlider = false;
+    let isHovered = false;
+    let startX = 0;
+    let currentX = 0;
+    let targetX = 0;
+
+    const autoSpeed = 0.4;
+    const lerp = 0.07;
+
+    function animate() {
+
+      if (!isDraggingSlider && !isHovered) {
+        targetX -= autoSpeed;
+      }
+
+      const halfWidth = track.scrollWidth / 2;
+
+      if (targetX <= -halfWidth) {
+        targetX += halfWidth;
+        currentX += halfWidth;
+      }
+
+      if (targetX >= 0) {
+        targetX -= halfWidth;
+        currentX -= halfWidth;
+      }
+
+      currentX += (targetX - currentX) * lerp;
+      track.style.transform = `translate3d(${currentX}px, 0, 0)`;
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    function dragStart(e) {
+      isDraggingSlider = true;
+      startX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+      slider.style.cursor = "grabbing";
+    }
+
+    function dragMove(e) {
+      if (!isDraggingSlider) return;
+
+      const x = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+      const walk = x - startX;
+
+      targetX += walk * 0.9;
+      startX = x;
+    }
+
+    function dragEnd() {
+      isDraggingSlider = false;
+      slider.style.cursor = "grab";
+    }
+
+    slider.addEventListener("mousedown", dragStart);
+    window.addEventListener("mousemove", dragMove);
+    window.addEventListener("mouseup", dragEnd);
+
+    slider.addEventListener("touchstart", dragStart, { passive: true });
+    window.addEventListener("touchmove", dragMove, { passive: true });
+    window.addEventListener("touchend", dragEnd);
+
+    slider.addEventListener("mouseenter", () => isHovered = true);
+    slider.addEventListener("mouseleave", () => {
+      isHovered = false;
+      isDraggingSlider = false;
+      slider.style.cursor = "grab";
+    });
+
+    function getMoveAmount() {
+      const item = track.children[0];
+      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+      return item.offsetWidth + gap;
+    }
+
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener("click", () => {
+        targetX += getMoveAmount();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        targetX -= getMoveAmount();
+      });
+    }
+  }
+
+  /* ================= FLOATING BUTTON DRAG (SMOOTH + RETURN) ================= */
+
+  const button = document.querySelector(".side-contact");
+
+  if (button) {
+
+    let isDraggingButton = false;
+    let offsetX = 0;
+    let offsetY = 0;
+    let returnTimeout;
+
+    const originalRight = "35px";
+    const originalTop = "50%";
+    const originalTransform = "translateY(-50%)";
+
+    button.addEventListener("mousedown", (e) => {
+      isDraggingButton = true;
+      button.classList.add("dragging");
+
+      const rect = button.getBoundingClientRect();
+      offsetX = e.clientX - rect.left;
+      offsetY = e.clientY - rect.top;
+
+      button.style.transition = "none";
+      clearTimeout(returnTimeout);
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!isDraggingButton) return;
+
+      const x = e.clientX - offsetX;
+      const y = e.clientY - offsetY;
+
+      button.style.left = x + "px";
+      button.style.top = y + "px";
+      button.style.right = "auto";
+      button.style.transform = "none";
+    });
+
+    document.addEventListener("mouseup", () => {
+      if (!isDraggingButton) return;
+
+      isDraggingButton = false;
+      button.classList.remove("dragging");
+
+      button.style.transition = "all 0.4s ease";
+
+      returnTimeout = setTimeout(() => {
+        button.style.transition = "all 0.8s cubic-bezier(0.22, 1, 0.36, 1)";
+        button.style.left = "auto";
+        button.style.right = originalRight;
+        button.style.top = originalTop;
+        button.style.transform = originalTransform;
+      }, 10000);
+    });
+  }
+
 });
 </script>
-
-</body>
-</html>

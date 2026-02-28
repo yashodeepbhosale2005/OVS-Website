@@ -1,0 +1,9 @@
+{
+    "project-image-browser.includeFolders": "",
+    "project-image-browser.excludeFolders": "node_modules",
+    "project-image-browser.includeProjectFolders": {
+        "c:\\Users\\YASHODEEP BHOSALE\\OneDrive\\Desktop\\OVS Website": true
+    },
+    "project-image-browser.imageBackground": "transparent",
+    "project-image-browser.imageSize": 120
+}
